@@ -2,6 +2,7 @@ import scrapy
 from scrapy.contrib.loader import ItemLoader
 from nytimes.items import NytimesItem
 import json
+import datetime
 
 class nytSpider(scrapy.Spider):
     name = 'nyt'
@@ -13,7 +14,6 @@ class nytSpider(scrapy.Spider):
         l.add_xpath('date', '//*[@id="masthead"]/div[4]/ul/li[1]/text()')
         l.add_xpath('topnews','//*[contains(@id,"topnews-100")]/h2/a/text()')
         l.add_xpath('sectionnews','//h3[contains(@class,"story-heading")]/text()')
-        print('----------------------------')
         #print(type(l.load_item()))
         x = l.load_item()
         #print(len(x['date']),len(x['topnews']),len(x['sectionnews']))
@@ -31,7 +31,8 @@ class nytSpider(scrapy.Spider):
         for t in x['sectionnews']:
             sectionnewslist.append(str(t.encode('ascii','ignore')).strip())
         nytdict['sectionnews']=sectionnewslist
-        print(nytdict)
-        f =  open('nytimes.json','w')
+
+        filename = datetime.date.today()
+        f=open('{}.json'.format(filename),'w')
         json.dump(nytdict,f)
         return l.load_item()

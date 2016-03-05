@@ -49,7 +49,7 @@
 <meta name="description" content="Breaking news and analysis from TIME.com. Politics, world news, photos, video, tech reviews, health, science and entertainment news." />
 <meta name="keywords" content="TIME.com, Breaking news, Politics, world news, photos, video, tech reviews, health, science and entertainment news." />
 <script type="text/javascript">try{window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o?o:e)},o,o.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({QJf3ax:[function(t,e){function n(t){function e(e,n,a){t&&t(e,n,a),a||(a={});for(var c=s(e),f=c.length,u=i(a,o,r),d=0;f>d;d++)c[d].apply(u,n);return u}function a(t,e){f[t]=s(t).concat(e)}function s(t){return f[t]||[]}function c(){return n(e)}var f={};return{on:a,emit:e,create:c,listeners:s,_events:f}}function r(){return{}}var o="nr@context",i=t("gos");e.exports=n()},{gos:"7eSDFh"}],ee:[function(t,e){e.exports=t("QJf3ax")},{}],3:[function(t){function e(t){try{i.console&&console.log(t)}catch(e){}}var n,r=t("ee"),o=t(1),i={};try{n=localStorage.getItem("__nr_flags").split(","),console&&"function"==typeof console.log&&(i.console=!0,-1!==n.indexOf("dev")&&(i.dev=!0),-1!==n.indexOf("nr_dev")&&(i.nrDev=!0))}catch(a){}i.nrDev&&r.on("internal-error",function(t){e(t.stack)}),i.dev&&r.on("fn-err",function(t,n,r){e(r.stack)}),i.dev&&(e("NR AGENT IN DEVELOPMENT MODE"),e("flags: "+o(i,function(t){return t}).join(", ")))},{1:22,ee:"QJf3ax"}],4:[function(t){function e(t,e,n,i,s){try{c?c-=1:r("err",[s||new UncaughtException(t,e,n)])}catch(f){try{r("ierr",[f,(new Date).getTime(),!0])}catch(u){}}return"function"==typeof a?a.apply(this,o(arguments)):!1}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function n(t){r("err",[t,(new Date).getTime()])}var r=t("handle"),o=t(6),i=t("ee"),a=window.onerror,s=!1,c=0;t("loader").features.err=!0,t(5),window.onerror=e;try{throw new Error}catch(f){"stack"in f&&(t(1),t(2),"addEventListener"in window&&t(3),window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)&&t(4),s=!0)}i.on("fn-start",function(){s&&(c+=1)}),i.on("fn-err",function(t,e,r){s&&(this.thrown=!0,n(r))}),i.on("fn-end",function(){s&&!this.thrown&&c>0&&(c-=1)}),i.on("internal-error",function(t){r("ierr",[t,(new Date).getTime(),!0])})},{1:9,2:8,3:6,4:10,5:3,6:23,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],5:[function(t){function e(){}if(window.performance&&window.performance.timing&&window.performance.getEntriesByType){var n=t("ee"),r=t("handle"),o=t(1),i=t(2);t("loader").features.stn=!0,t(3),n.on("fn-start",function(t){var e=t[0];e instanceof Event&&(this.bstStart=Date.now())}),n.on("fn-end",function(t,e){var n=t[0];n instanceof Event&&r("bst",[n,e,this.bstStart,Date.now()])}),o.on("fn-start",function(t,e,n){this.bstStart=Date.now(),this.bstType=n}),o.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),this.bstType])}),i.on("fn-start",function(){this.bstStart=Date.now()}),i.on("fn-end",function(t,e){r("bstTimer",[e,this.bstStart,Date.now(),"requestAnimationFrame"])}),n.on("pushState-start",function(){this.time=Date.now(),this.startPath=location.pathname+location.hash}),n.on("pushState-end",function(){r("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),"addEventListener"in window.performance&&(window.performance.addEventListener("webkitresourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.webkitClearResourceTimings()},!1),window.performance.addEventListener("resourcetimingbufferfull",function(){r("bstResource",[window.performance.getEntriesByType("resource")]),window.performance.clearResourceTimings()},!1)),document.addEventListener("scroll",e,!1),document.addEventListener("keypress",e,!1),document.addEventListener("click",e,!1)}},{1:9,2:8,3:7,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],6:[function(t,e){function n(t){i.inPlace(t,["addEventListener","removeEventListener"],"-",r)}function r(t){return t[1]}var o=t("ee").create(),i=t(1)(o),a=t("gos");if(e.exports=o,n(window),"getPrototypeOf"in Object){for(var s=document;s&&!s.hasOwnProperty("addEventListener");)s=Object.getPrototypeOf(s);s&&n(s);for(var c=XMLHttpRequest.prototype;c&&!c.hasOwnProperty("addEventListener");)c=Object.getPrototypeOf(c);c&&n(c)}else XMLHttpRequest.prototype.hasOwnProperty("addEventListener")&&n(XMLHttpRequest.prototype);o.on("addEventListener-start",function(t){if(t[1]){var e=t[1];"function"==typeof e?this.wrapped=t[1]=a(e,"nr@wrapped",function(){return i(e,"fn-",null,e.name||"anonymous")}):"function"==typeof e.handleEvent&&i.inPlace(e,["handleEvent"],"fn-")}}),o.on("removeEventListener-start",function(t){var e=this.wrapped;e&&(t[1]=e)})},{1:24,ee:"QJf3ax",gos:"7eSDFh"}],7:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window.history,["pushState"],"-")},{1:24,ee:"QJf3ax"}],8:[function(t,e){var n=t("ee").create(),r=t(1)(n);e.exports=n,r.inPlace(window,["requestAnimationFrame","mozRequestAnimationFrame","webkitRequestAnimationFrame","msRequestAnimationFrame"],"raf-"),n.on("raf-start",function(t){t[0]=r(t[0],"fn-")})},{1:24,ee:"QJf3ax"}],9:[function(t,e){function n(t,e,n){t[0]=o(t[0],"fn-",null,n)}var r=t("ee").create(),o=t(1)(r);e.exports=r,o.inPlace(window,["setTimeout","setInterval","setImmediate"],"setTimer-"),r.on("setTimer-start",n)},{1:24,ee:"QJf3ax"}],10:[function(t,e){function n(){f.inPlace(this,p,"fn-")}function r(t,e){f.inPlace(e,["onreadystatechange"],"fn-")}function o(t,e){return e}function i(t,e){for(var n in t)e[n]=t[n];return e}var a=t("ee").create(),s=t(1),c=t(2),f=c(a),u=c(s),d=window.XMLHttpRequest,p=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"];e.exports=a,window.XMLHttpRequest=function(t){var e=new d(t);try{a.emit("new-xhr",[],e),u.inPlace(e,["addEventListener","removeEventListener"],"-",o),e.addEventListener("readystatechange",n,!1)}catch(r){try{a.emit("internal-error",[r])}catch(i){}}return e},i(d,XMLHttpRequest),XMLHttpRequest.prototype=d.prototype,f.inPlace(XMLHttpRequest.prototype,["open","send"],"-xhr-",o),a.on("send-xhr-start",r),a.on("open-xhr-start",r)},{1:6,2:24,ee:"QJf3ax"}],11:[function(t){function e(t){var e=this.params,r=this.metrics;if(!this.ended){this.ended=!0;for(var i=0;c>i;i++)t.removeEventListener(s[i],this.listener,!1);if(!e.aborted){if(r.duration=(new Date).getTime()-this.startTime,4===t.readyState){e.status=t.status;var a=t.responseType,f="arraybuffer"===a||"blob"===a||"json"===a?t.response:t.responseText,u=n(f);if(u&&(r.rxSize=u),this.sameOrigin){var d=t.getResponseHeader("X-NewRelic-App-Data");d&&(e.cat=d.split(", ").pop())}}else e.status=0;r.cbTime=this.cbTime,o("xhr",[e,r,this.startTime])}}}function n(t){if("string"==typeof t&&t.length)return t.length;if("object"!=typeof t)return void 0;if("undefined"!=typeof ArrayBuffer&&t instanceof ArrayBuffer&&t.byteLength)return t.byteLength;if("undefined"!=typeof Blob&&t instanceof Blob&&t.size)return t.size;if("undefined"!=typeof FormData&&t instanceof FormData)return void 0;try{return JSON.stringify(t).length}catch(e){return void 0}}function r(t,e){var n=i(e),r=t.params;r.host=n.hostname+":"+n.port,r.pathname=n.pathname,t.sameOrigin=n.sameOrigin}if(window.XMLHttpRequest&&XMLHttpRequest.prototype&&XMLHttpRequest.prototype.addEventListener&&!/CriOS/.test(navigator.userAgent)){t("loader").features.xhr=!0;var o=t("handle"),i=t(2),a=t("ee"),s=["load","error","abort","timeout"],c=s.length,f=t(1);t(4),t(3),a.on("new-xhr",function(){this.totalCbs=0,this.called=0,this.cbTime=0,this.end=e,this.ended=!1,this.xhrGuids={}}),a.on("open-xhr-start",function(t){this.params={method:t[0]},r(this,t[1]),this.metrics={}}),a.on("open-xhr-end",function(t,e){"loader_config"in NREUM&&"xpid"in NREUM.loader_config&&this.sameOrigin&&e.setRequestHeader("X-NewRelic-ID",NREUM.loader_config.xpid)}),a.on("send-xhr-start",function(t,e){var r=this.metrics,o=t[0],i=this;if(r&&o){var f=n(o);f&&(r.txSize=f)}this.startTime=(new Date).getTime(),this.listener=function(t){try{"abort"===t.type&&(i.params.aborted=!0),("load"!==t.type||i.called===i.totalCbs&&(i.onloadCalled||"function"!=typeof e.onload))&&i.end(e)}catch(n){try{a.emit("internal-error",[n])}catch(r){}}};for(var u=0;c>u;u++)e.addEventListener(s[u],this.listener,!1)}),a.on("xhr-cb-time",function(t,e,n){this.cbTime+=t,e?this.onloadCalled=!0:this.called+=1,this.called!==this.totalCbs||!this.onloadCalled&&"function"==typeof n.onload||this.end(n)}),a.on("xhr-load-added",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&!this.xhrGuids[n]&&(this.xhrGuids[n]=!0,this.totalCbs+=1)}),a.on("xhr-load-removed",function(t,e){var n=""+f(t)+!!e;this.xhrGuids&&this.xhrGuids[n]&&(delete this.xhrGuids[n],this.totalCbs-=1)}),a.on("addEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-added",[t[1],t[2]],e)}),a.on("removeEventListener-end",function(t,e){e instanceof XMLHttpRequest&&"load"===t[0]&&a.emit("xhr-load-removed",[t[1],t[2]],e)}),a.on("fn-start",function(t,e,n){e instanceof XMLHttpRequest&&("onload"===n&&(this.onload=!0),("load"===(t[0]&&t[0].type)||this.onload)&&(this.xhrCbStart=(new Date).getTime()))}),a.on("fn-end",function(t,e){this.xhrCbStart&&a.emit("xhr-cb-time",[(new Date).getTime()-this.xhrCbStart,this.onload,e],e)})}},{1:"XL7HBI",2:12,3:10,4:6,ee:"QJf3ax",handle:"D5DuLP",loader:"G9z0Bl"}],12:[function(t,e){e.exports=function(t){var e=document.createElement("a"),n=window.location,r={};e.href=t,r.port=e.port;var o=e.href.split("://");return!r.port&&o[1]&&(r.port=o[1].split("/")[0].split("@").pop().split(":")[1]),r.port&&"0"!==r.port||(r.port="https"===o[0]?"443":"80"),r.hostname=e.hostname||n.hostname,r.pathname=e.pathname,r.protocol=o[0],"/"!==r.pathname.charAt(0)&&(r.pathname="/"+r.pathname),r.sameOrigin=!e.hostname||e.hostname===document.domain&&e.port===n.port&&e.protocol===n.protocol,r}},{}],13:[function(t,e){function n(t){return function(){r(t,[(new Date).getTime()].concat(i(arguments)))}}var r=t("handle"),o=t(1),i=t(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(t,e){window.NREUM[e]=n("api-"+e)}),e.exports=window.NREUM},{1:22,2:23,handle:"D5DuLP"}],gos:[function(t,e){e.exports=t("7eSDFh")},{}],"7eSDFh":[function(t,e){function n(t,e,n){if(r.call(t,e))return t[e];var o=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return t[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],D5DuLP:[function(t,e){function n(t,e,n){return r.listeners(t).length?r.emit(t,e,n):void(r.q&&(r.q[t]||(r.q[t]=[]),r.q[t].push(e)))}var r=t("ee").create();e.exports=n,n.ee=r,r.q={}},{ee:"QJf3ax"}],handle:[function(t,e){e.exports=t("D5DuLP")},{}],XL7HBI:[function(t,e){function n(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:i(t,o,function(){return r++})}var r=1,o="nr@id",i=t("gos");e.exports=n},{gos:"7eSDFh"}],id:[function(t,e){e.exports=t("XL7HBI")},{}],G9z0Bl:[function(t,e){function n(){var t=p.info=NREUM.info,e=f.getElementsByTagName("script")[0];if(t&&t.licenseKey&&t.applicationID&&e){s(d,function(e,n){e in t||(t[e]=n)});var n="https"===u.split(":")[0]||t.sslForHttp;p.proto=n?"https://":"http://",a("mark",["onload",i()]);var r=f.createElement("script");r.src=p.proto+t.agent,e.parentNode.insertBefore(r,e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=t("handle"),s=t(1),c=window,f=c.document;t(2);var u=(""+location).split("?")[0],d={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-686.min.js"},p=e.exports={offset:i(),origin:u,features:{}};f.addEventListener?(f.addEventListener("DOMContentLoaded",o,!1),c.addEventListener("load",n,!1)):(f.attachEvent("onreadystatechange",r),c.attachEvent("onload",n)),a("mark",["firstbyte",i()])},{1:22,2:13,handle:"D5DuLP"}],loader:[function(t,e){e.exports=t("G9z0Bl")},{}],22:[function(t,e){function n(t,e){var n=[],o="",i=0;for(o in t)r.call(t,o)&&(n[i]=e(o,t[o]),i+=1);return n}var r=Object.prototype.hasOwnProperty;e.exports=n},{}],23:[function(t,e){function n(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,o=n-e||0,i=Array(0>o?0:o);++r<o;)i[r]=t[e+r];return i}e.exports=n},{}],24:[function(t,e){function n(t){return!(t&&"function"==typeof t&&t.apply&&!t[i])}var r=t("ee"),o=t(1),i="nr@wrapper",a=Object.prototype.hasOwnProperty;e.exports=function(t){function e(t,e,r,a){function nrWrapper(){var n,i,s,f;try{i=this,n=o(arguments),s=r&&r(n,i)||{}}catch(d){u([d,"",[n,i,a],s])}c(e+"start",[n,i,a],s);try{return f=t.apply(i,n)}catch(p){throw c(e+"err",[n,i,p],s),p}finally{c(e+"end",[n,i,f],s)}}return n(t)?t:(e||(e=""),nrWrapper[i]=!0,f(t,nrWrapper),nrWrapper)}function s(t,r,o,i){o||(o="");var a,s,c,f="-"===o.charAt(0);for(c=0;c<r.length;c++)s=r[c],a=t[s],n(a)||(t[s]=e(a,f?s+o:o,i,s))}function c(e,n,r){try{t.emit(e,n,r)}catch(o){u([o,e,n,r])}}function f(t,e){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(t);return n.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(r){u([r])}for(var o in t)a.call(t,o)&&(e[o]=t[o]);return e}function u(e){try{t.emit("internal-error",e)}catch(n){}}return t||(t=r),e.inPlace=s,e.flag=i,e}},{1:23,ee:"QJf3ax"}]},{},["G9z0Bl",4,11,5]);
-;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"7fc7d5aa08",applicationID:"11840999",sa:1,agent:"js-agent.newrelic.com/nr-686.min.js"}}catch(err){};</script>		<script src='https://r-login.wordpress.com/remote-login.php?action=js&amp;host=time.com&amp;id=1359921&amp;t=1456180726&amp;back=http%3A%2F%2Ftime.com%2F' type="text/javascript"></script>
+;NREUM.info={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",licenseKey:"7fc7d5aa08",applicationID:"11840999",sa:1,agent:"js-agent.newrelic.com/nr-686.min.js"}}catch(err){};</script>		<script src='https://r-login.wordpress.com/remote-login.php?action=js&amp;host=time.com&amp;id=1359921&amp;t=1456347785&amp;back=http%3A%2F%2Ftime.com%2F' type="text/javascript"></script>
 		<script type="text/javascript">
 		/* <![CDATA[ */
 			if ( 'function' === typeof WPRemoteLogin ) {
@@ -83,7 +83,7 @@
 <link rel='stylesheet' id='oldie-css'  href='https://s0.wp.com/wp-content/themes/vip/time2014/css/oldie.css?m=1432131068g&#038;ver=4.4.1-alpha-36109' type='text/css' media='all' />
 <![endif]-->
 <link rel='stylesheet' id='all-css-4' href='https://s0.wp.com/_static/??-eJx9i9EKgzAMAH9oXZAVxQfxW2qJMZI2YiP7fbsXcQz2dgd3wJDVOGouFzxjKQ94b66KYTZIh9vkIK4NoTrRGIw1f4mbJfD+b91xEqWKBLW66c9kCyYssHgg0SnIJxjT0Hjft6+u7fx6As3lQyI=' type='text/css' media='all' />
-<script>utag_data = {"channel":"time","friendly_url":"https:\/\/timedotcom.wordpress.com\/","is_logged_in":"no","page_name":"home","site_section1":"main","site_theme":"v2","template_type":"section front","site_display_format":"desktop","page_type":"section front"};</script><script type='text/javascript' src='https://s0.wp.com/_static/??-eJyFjt0OgjAMRl/IMYbzggvjsyBU7GQ/rgUiT29J9MJINGnSpD09/fScFIZ2GDsg7aTuI+THqxWOdvoXoDz2uWEoPIY33MbAEHhlfTzjAGokyE0vMxFd4gaXIrEHIoE2tp+RMEwI81/MAaemvakMhMuXla8g//SESTN6qEpjV0WHxBK6gxxwyXJ08kdj9/XBlFVt3ROUCG8V'></script>
+<script>utag_data = {"channel":"time","friendly_url":"https:\/\/timedotcom.wordpress.com\/","is_logged_in":"no","page_name":"home","site_section1":"main","site_theme":"v2","template_type":"section front","site_display_format":"tablet","page_type":"section front"};</script><script type='text/javascript' src='https://s0.wp.com/_static/??-eJyFjt0OgjAMRl/IMYbzggvjsyBU7GQ/rgUiT29J9MJINGnSpD09/fScFIZ2GDsg7aTuI+THqxWOdvoXoDz2uWEoPIY33MbAEHhlfTzjAGokyE0vMxFd4gaXIrEHIoE2tp+RMEwI81/MAaemvakMhMuXla8g//SESTN6qEpjV0WHxBK6gxxwyXJ08kdj9/XBlFVt3ROUCG8V'></script>
 <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://timedotcom.wordpress.com/xmlrpc.php?rsd" />
 <link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml" /> 
 <meta name="generator" content="WordPress.com" />
@@ -259,14 +259,14 @@
 		</div>
 
 		<div class="tertiary-nav-wrapper tertiary-nav-special">
-			<a href="http://time.com/collection/2015-time-100/?xid=homepage">The 100 Most Influential People</a>
-<a href="http://time.com/4115398/best-inventions-2015/?xid=homepage">The 25 Best Inventions of 2015</a>
+			<a href="http://time.com/collection/2015-time-100/">The 100 Most Influential People</a>
+<a href="http://time.com/4115398/best-inventions-2015/">The 25 Best Inventions of 2015</a>
 <a href="http://time.com/tag/alzheimers/">Future of Giving</a>
 <a href="http://time.com/topic/global-trade-2/">Global Trade</a>
 <a href="http://time.com/tag/know-right-now/">Know Right Now</a>
-<a href="http://time.com/collection/next-generation-leaders/?xid=homepage">Next Generation Leaders</a>
+<a href="http://time.com/collection/next-generation-leaders/">Next Generation Leaders</a>
 <a href="http://time.com/time-person-of-the-year-2015-angela-merkel-choice/">Person of the Year 2015</a>
-<a href="http://time.com/collection/top-10-everything-of-2015/?xid=homepage">Top 10 Everything of 2015</a>
+<a href="http://time.com/collection/top-10-everything-of-2015/">Top 10 Everything of 2015</a>
 <a href="http://time.com/world-trade-center/">Top of the World</a>
 <a href="http://time.com/space-nasa-scott-kelly-mission/">A Year In Space</a>
 		</div>
@@ -353,117 +353,392 @@
 			<nav class="rail-articles-scroll">
 				<div id="section-sub-ad"></div>
 				<section class="article-list">
-					<h2 class="rail-list-heading">Just Posted</h2><div class="rail-article format-article  has-thumbnail " data-article="4232432">
+					<h2 class="rail-list-heading">Just Posted</h2><div class="rail-article format-article  has-thumbnail " data-article="4236147">
 	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-22-at-5-32-44-pm.png?w=74&amp;h=74&amp;crop=1">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/trump9.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
 		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232432/2016-the-simpsons/?xid=homepage" data-event="left-hand-rail"><i>The Simpsons</i> Take On The 2016 Election With &#8216;The Debateful Eight&#8217;</a>
-			<time datetime="2016-02-22 22:36:30">5:36 PM ET</time>
+			<a class="article-permalink" href="http://time.com/4236147/donald-trump-establishment-candidate/?xid=homepage" data-event="left-hand-rail">The Day Donald Trump Became the Establishment Candidate</a>
+			<time datetime="2016-02-24 20:56:58">3:56 PM ET</time>
 		</h3>
 		
 		
 	</div>
 	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4232970">
+</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4236175">
 	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-88305590.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/kesha.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
 		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/money/4232970/fees-frugal-people-never-pay/?xid=homepage" data-event="left-hand-rail">10 Fees Frugal People Never Pay</a>
-			<time datetime="2016-02-22 22:30:57">5:30 PM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4233148">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/kalamazoo_jason_dalt.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4233148/kalamazoo-uber-driver-rating-shooting-rampage/?xid=homepage" data-event="left-hand-rail">Kalamazoo Uber Driver Had a 4.73 Rating Before Shooting Rampage</a>
-			<time datetime="2016-02-22 22:21:51">5:21 PM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4229252">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/google-president.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4229252/google-twitter-presidential-elections-predictions-analysis/?xid=homepage" data-event="left-hand-rail">What Google and Twitter Can Tell Us About 2016</a>
-			<time datetime="2016-02-22 22:20:21">5:20 PM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4232996">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-133875183.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232996/cheesy-garlic-knots-fight-florida/?xid=homepage" data-event="left-hand-rail">A Brutal Fight Broke Out Over Cheesy Garlic Knots</a>
-			<time datetime="2016-02-22 22:14:48">5:14 PM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4233007">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-476996143.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/money/4233007/mastercard-selfie-authentication/?xid=homepage" data-event="left-hand-rail">Mastercard Wants You to Pay with a Selfie</a>
-			<time datetime="2016-02-22 22:09:11">5:09 PM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4233135">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/frederick-t-najdek.jpg?crop=0px%2C21px%2C534px%2C534px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4233135/delaware-baby-car-theft-safe/?xid=homepage" data-event="left-hand-rail">Delaware Baby Safe After Being Kidnapped in Car Theft</a>
-			<time datetime="2016-02-22 21:54:48">4:54 PM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4230888">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/the-revenant_2slqvm1.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230888/watch-2016-oscar-nominated-movies-online/?xid=homepage" data-event="left-hand-rail">Here’s Where You Can Watch This Year&#8217;s Oscar-Nominated Movies Online</a>
-			<time datetime="2016-02-22 21:28:28">4:28 PM ET</time>
-		</h3>
-		<a href="http://time.com/topic/oscars-2016/" class="full-coverage-link" data-event="tile">All Content</a>
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4233085">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/claire-mccaskill2.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4233085/senator-mccaskill-breast-cancer-announcement/?xid=homepage" data-event="left-hand-rail">Sen. Claire McCaskill Says She Has Breast Cancer</a>
-			<time datetime="2016-02-22 21:28:13">4:28 PM ET</time>
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4232985">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/far-cry-primal-3.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232985/far-cry-primal/?xid=homepage" data-event="left-hand-rail">If This Is What Being a Caveman Was Like, Sign Me Up</a>
-			<time datetime="2016-02-22 21:25:51">4:25 PM ET</time>
+			<a class="article-permalink" href="http://time.com/4236175/adele-kesha-support-brit-awards/?xid=homepage" data-event="left-hand-rail">Adele Publicly Supports Kesha in Brit Awards Speech</a>
+			<time datetime="2016-02-24 20:51:01">3:51 PM ET</time>
 		</h3>
 		
 		<span class="tile-icon time-icons time-icons-video"></span>
 	</div>
 	
-</div><h2 class="rail-list-heading">Newsfeed</h2><div class="rail-article format-article  has-thumbnail " data-article="4232432">
+</div><div class="rail-article format-article  has-thumbnail " data-article="4236214">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-24-at-3-44-33-pm.png?w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236214/ipod-shuffle-the-mighty/?xid=homepage" data-event="left-hand-rail">The iPod Shuffle’s Back and Nothing Like You Remember</a>
+			<time datetime="2016-02-24 20:49:07">3:49 PM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4235984">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/bob-corker.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235984/bob-corker-syria-bashar-assad/?xid=homepage" data-event="left-hand-rail">Corker: The U.S. Is &#8216;Empowering Assad&#8217; in Syria</a>
+			<time datetime="2016-02-24 20:48:53">3:48 PM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4236115">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-525387657.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/money/4236115/employers-willing-to-rehire-former-employees/?xid=homepage" data-event="left-hand-rail">Your Old Boss Probably Wants You Back</a>
+			<time datetime="2016-02-24 20:39:34">3:39 PM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4236167">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/leland-yee-corruption-racketeering-california-bribes.jpg?crop=721px%2C272px%2C896px%2C897px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236167/leland-yee-sentenced-racketeering/?xid=homepage" data-event="left-hand-rail">Former Calif. State Senator Gets 5 Years for Racketeering</a>
+			<time datetime="2016-02-24 20:38:22">3:38 PM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4236024">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/leonardo-dicaprio.jpg?crop=168px%2C0px%2C388px%2C388px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236024/leonardo-dicaprio-movie-montage-the-revenant/?xid=homepage" data-event="left-hand-rail">Here&#8217;s a Montage of Every Leonardo DiCaprio Movie Ever</a>
+			<time datetime="2016-02-24 20:28:39">3:28 PM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4236089">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/louisiana-south-storm-tornado.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236089/florida-tornado-drove-video/?xid=homepage" data-event="left-hand-rail">Shocking Drone Video Shows Massive Tornado Damage in Florida</a>
+			<time datetime="2016-02-24 20:18:51">3:18 PM ET</time>
+		</h3>
+		
+		<span class="tile-icon time-icons time-icons-video"></span>
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4236106">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/googledocsvoice.png?w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236106/google-docs-voice/?xid=homepage" data-event="left-hand-rail">Google Docs Just Added This Futuristic Feature</a>
+			<time datetime="2016-02-24 20:17:23">3:17 PM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4236001">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/brian-sandoval.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236001/brian-sandoval-supreme-court-barack-obama-antonin-scalia/?xid=homepage" data-event="left-hand-rail">Here&#8217;s Why Obama Might Pick a Republican Governor for Supreme Court</a>
+			<time datetime="2016-02-24 20:08:40">3:08 PM ET</time>
+		</h3>
+		
+		
+	</div>
+	
+</div><h2 class="rail-list-heading">Newsfeed</h2><div class="rail-article format-brief  has-thumbnail " data-article="4236024">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/leonardo-dicaprio.jpg?crop=168px%2C0px%2C388px%2C388px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236024/leonardo-dicaprio-movie-montage-the-revenant/?xid=homepage" data-event="left-hand-rail">Here&#8217;s a Montage of Every Leonardo DiCaprio Movie Ever</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4236047">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/dog-sunglasses-doggles.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4236047/doggles-dog-sunglasses/?xid=homepage" data-event="left-hand-rail">Meet the Woman Who Built an Empire on Dog Sunglasses</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4235658">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/animal-shelter-dogs.jpg?crop=172px%2C139px%2C126px%2C126px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235658/kids-reading-to-shelter-dogs/?xid=homepage" data-event="left-hand-rail">Watch These Kids Comfort Shelter Dogs by Reading to Them</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4235860">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/vanderbilt-josh-hendeson.jpg?crop=49px%2C0px%2C459px%2C459px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235860/vanderbilt-80-foot-buzzer-beater/?xid=homepage" data-event="left-hand-rail">Vanderbilt Player Sinks 80-Foot Buzzer-Beater Without Even Jumping</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4235955">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/girl-scout-cookies-portland-pot-dispensary.jpg?crop=962px%2C0px%2C3842px%2C3842px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235955/girl-scout-cookie-marijuana-pot-dispensary/?xid=homepage" data-event="left-hand-rail">Genius Girl Scout Starts Selling Cookies Across From Marijuana Dispensary</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4235721">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-24-at-11-51-45-am.png?w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235721/stephen-colbert-blister-in-the-sun-violent-femmes/?xid=homepage" data-event="left-hand-rail">Watch Stephen Colbert Perform &#8216;Blister in the Sun&#8217; With the Violent Femmes</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4235365">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/permanent-marker.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235365/zebra-marker-baby-sister-video/?xid=homepage" data-event="left-hand-rail">Little Girl Turns Baby Sister Into a &#8216;Zebra&#8217; Using Permanent Marker</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4235747">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-86221181.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235747/zachary-quinto-leonard-nimoy-colbert/?xid=homepage" data-event="left-hand-rail">Zachary Quinto Told Stephen Colbert Something Beautiful About Leonard Nimoy</a>
+			
+		</h3>
+		
+		<span class="tile-icon time-icons time-icons-video"></span>
+	</div>
+	
+</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4235362">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/norman-reedus-daryl-dixon.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235362/hoverboard-zombies-daryl-dixon-jimmy-kimmel/?xid=homepage" data-event="left-hand-rail">Even Zombies on Hoverboards Are No Match for <i>The Walking Dead&#8217;</i>s Daryl Dixon</a>
+			
+		</h3>
+		
+		<span class="tile-icon time-icons time-icons-video"></span>
+	</div>
+	
+</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4235390">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-511898086.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235390/bill-melinda-gates-annual-letter-rave/?xid=homepage" data-event="left-hand-rail">Watch Bill and Melinda Gates Host a Rave</a>
+			
+		</h3>
+		
+		<span class="tile-icon time-icons time-icons-video"></span>
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4235380">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/damn-daniel.png?w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4235380/damn-daniel-ellen-vans/?xid=homepage" data-event="left-hand-rail">&#8216;Damn, Daniel&#8217; Is Back at It With a Lifetime Supply of Vans</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4234902">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/virginia-mclaurin.jpg?crop=821px%2C34px%2C294px%2C294px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4234902/virginia-mclaurin-white-house-dancing-people-interview/?xid=homepage" data-event="left-hand-rail">Meet the 106-Year-Old Woman Who Danced With the Obamas</a>
+			
+		</h3>
+		
+		<span class="tile-icon time-icons time-icons-video"></span>
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4234272">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/leopard-pittsburgh.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4234272/leopard-cub-pittsburgh-zoo/?xid=homepage" data-event="left-hand-rail">Here&#8217;s a First Look at the Rare Amur Leopard Cub Born at the Pittsburgh Zoo</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4234477">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/01/jon-hamm-misspelled-golen-globes.jpg?crop=353px%2C156px%2C1887px%2C1887px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4234477/jon-hamm-rescues-hummingbird/?xid=homepage" data-event="left-hand-rail">Watch Jon Hamm Literally Rescue a Trapped Hummingbird</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4234449">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/ellen-degeneres.jpg?crop=124px%2C1px%2C316px%2C316px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4234449/ellen-degeneres-game-of-thrones-trailer-characters/?xid=homepage" data-event="left-hand-rail">Ellen DeGeneres&#8217;s <em>Game of Thrones</em> Promo Introduces Some New Characters</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4234305">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/oscars-honest-trailer.jpg?crop=111px%2C46px%2C355px%2C355px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4234305/honest-trailer-oscars-best-picture-nominees/?xid=homepage" data-event="left-hand-rail">The Honest Trailer for the Oscars Takes a Shot at the Best Picture Nominees</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4234288">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/9780399542299.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4234288/doctor-who-coloring-book/?xid=homepage" data-event="left-hand-rail">Check Out The New <i>Doctor Who</i> Coloring Book</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4234079">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-70006856.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4234079/abandoned-piglet-friends-with-puppy/?xid=homepage" data-event="left-hand-rail">Tiny Piglet and Tiny Puppy Become Best Friends</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4233981">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/ballpark-burgers.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4233981/minor-league-baseball-pizza-wrapped-quadruple-cheeseburger/?xid=homepage" data-event="left-hand-rail">It&#8217;s Time to Meet the Pizza-Wrapped Quadruple Cheeseburger of Your Dreams</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4233740">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/queen-elizabeth-line.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4233740/london-queen-elizabeth-line-crossrail/?xid=homepage" data-event="left-hand-rail">London Is Getting a Train Line Named After Queen Elizabeth</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4233683">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/eva-longoria-spice-girls.jpg?crop=173px%2C1px%2C220px%2C220px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4233683/eva-longoria-reads-spice-girls-wannabe-as-soap-opera-star/?xid=homepage" data-event="left-hand-rail">Watch Eva Longoria Recite Spice Girls&#8217; &#8216;Wannabe&#8217; as a Soap Opera Star</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4233652">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-105694360.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4233652/coby-cat-blue-eyes/?xid=homepage" data-event="left-hand-rail">This May Be the Prettiest Cat On the Internet</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4230820">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/tootsie-roll-2.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4230820/tootsie-roll-history-origins-name-120th-anniversary/?xid=homepage" data-event="left-hand-rail">How Tootsie Rolls Got Their Name</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-brief  has-thumbnail " data-article="4233093">
+	<div class="content">
+		<img class="rail-article-photo" src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/henry-cavill.jpg?crop=201px%2C3px%2C237px%2C237px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4233093/henry-cavill-try-asks-kids-batman-v-superman/?xid=homepage" data-event="left-hand-rail">Watch Henry Cavill Try to Convince Kids That Superman Is Better Than Batman</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4232480">
+	<div class="content">
+		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/breast-feeding-baby-bottles.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
+		<h3 class="rail-article-title">
+			<a class="article-permalink" href="http://time.com/4232480/toddler-triplets-baby-video/?xid=homepage" data-event="left-hand-rail">Watch A Super Dad Get His Toddler And Infant Triplets Ready For Bed</a>
+			
+		</h3>
+		
+		
+	</div>
+	
+</div><div class="rail-article format-article  has-thumbnail " data-article="4232432">
 	<div class="content">
 		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-22-at-5-32-44-pm.png?w=74&amp;h=74&amp;crop=1">
 		<h3 class="rail-article-title">
@@ -511,282 +786,7 @@
 	<div class="content">
 		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/gigi-hadid-backstreet-boys.jpg?crop=95px%2C0px%2C396px%2C396px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
 		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232781/gigi-hadid-lip-sync-battle-backstreet-boys-larger-than-life/?xid=homepage" data-event="left-hand-rail">Watch Gigi Hadid Go Old School by Lip Syncing &#8216;Larger Than Life&#8217; with the Backstreet Boys</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4232465">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/white-tennis-shoes.jpg?crop=2822px%2C0px%2C2783px%2C2783px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232465/damn-daniel-viral-twitter-video-white-vans/?xid=homepage" data-event="left-hand-rail">The &#8216;Damn Daniel&#8217; Viral Twitter Video Is the Internet&#8217;s Latest Obsession</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4232328">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/01/mark-zuckerberg-music.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232328/mark-zuckerberg-samsung-gear-vr/?xid=homepage" data-event="left-hand-rail">This Photo of Mark Zuckerberg Is an Eerie Glimpse Into the Future</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4232349">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/ap_897834129208.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232349/kevin-spacey-joins-instagram-house-of-cards/?xid=homepage" data-event="left-hand-rail">Kevin Spacey&#8217;s First Instagram Would Make Frank Underwood Proud</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4232303">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/john-stamos-olsen-twins.jpg?crop=76px%2C0px%2C394px%2C394px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232303/john-stamos-olsen-twins-throwback-home-movie/?xid=homepage" data-event="left-hand-rail">Watch John Stamos Play With the Olsen Twins in This Adorable Home Movie</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4232317">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/drake-perform-bat-mitzvah-new-york-city.jpg?crop=280px%2C0px%2C1119px%2C1119px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232317/drake-bat-mitzvah-new-york/?xid=homepage" data-event="left-hand-rail">Watch Drake Perform at a Bat Mitzvah in New York City</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4232228">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/game-of-thrones-hbo.jpeg?crop=270px%2C34px%2C2565px%2C2565px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4232228/donald-trump-game-of-thrones-mashup/?xid=homepage" data-event="left-hand-rail">Watch Donald Trump Make Westeros Great Again in <i>Game of Thrones</i> Mashup</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4231563">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/will-ferrell-hillary-clinton.jpg?crop=149px%2C6px%2C310px%2C310px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231563/will-ferrell-supports-hillary-clinton-nevada-caucuses/?xid=homepage" data-event="left-hand-rail">Will Ferrell Sides With Clinton Over Sanders in Nevada</a>
-			
-		</h3>
-		
-		<span class="tile-icon time-icons time-icons-video"></span>
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4231542">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/vince-carter-full-court-buzzer-beater.jpg?crop=154px%2C54px%2C288px%2C288px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231542/vince-carter-full-court-buzzer-beater/?xid=homepage" data-event="left-hand-rail">Watch Vince Carter Hit a Nearly Full-Court Buzzer-Beater</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4231522">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/7up-lithium.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231522/7up-lithium-chemical-reaction/?xid=homepage" data-event="left-hand-rail">Here&#8217;s the Gross Thing That Happens When You Mix 7-Up With Lithium</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4231504">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/yelp-review.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231504/petsitter-sues-couple-negative-yelp-review/?xid=homepage" data-event="left-hand-rail">Petsitter Suing Couple for Over $6,700 After Negative Yelp Review</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4231490">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/obama-kids.jpg?crop=1047px%2C390px%2C1990px%2C1990px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231490/obama-and-kids-twitter-obamaandkids/?xid=homepage" data-event="left-hand-rail">Here&#8217;s Why Everyone Is Sharing Pictures of Obama With Kids</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4231235">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/stingray-photobomb.jpg?crop=133px%2C45px%2C278px%2C278px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231235/stingray-photobomb-proposal-pictures/?xid=homepage" data-event="left-hand-rail">Stingray Epically Photobombs Couple&#8217;s Proposal Pictures</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4231090">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-19-at-3-22-20-pm.png?w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231090/adele-ellen-degeneres-voicemail-greeting/?xid=homepage" data-event="left-hand-rail">Watch Adele Record Ellen&#8217;s Outgoing Voicemail Message</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4231148">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/firetruck-house-fire-girl-saves.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4231148/girl-saves-blind-grandmother-fire/?xid=homepage" data-event="left-hand-rail">5-Year-Old Girl Saves Blind Grandmother From House Fire</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4230552">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-19-at-2-23-41-pm.png?crop=764px%2C0px%2C1265px%2C1265px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230552/110-woman-interview-birthday/?xid=homepage" data-event="left-hand-rail">This 110-Year-Old Woman Just Gave the Best Interview Ever</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4230855">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/brooklyn-beckham-david-beckham.jpg?crop=199px%2C10px%2C275px%2C275px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230855/brooklyn-beckham-skateboard-jump-over-david-beckham/?xid=homepage" data-event="left-hand-rail">Watch Brooklyn Beckham Land a Daring Skateboard Jump Over Dad David Beckham</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4230863">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-510643310.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230863/germany-sex-animals/?xid=homepage" data-event="left-hand-rail">German Court Rules Sex With Animals Still Illegal</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4230510">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-19-at-10-42-07-am.png?w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230510/dog-learns-to-meow/?xid=homepage" data-event="left-hand-rail">This Brilliant Woman Has Trained Her Dog to Meow Like a Cat</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-brief  has-thumbnail " data-article="4230641">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/ronda-rousey.jpg?crop=35px%2C79px%2C290px%2C290px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230641/ronda-rousey-photoshopped-image/?xid=homepage" data-event="left-hand-rail">Ronda Rousey Apologizes for Accidentally Posting &#8216;Altered&#8217; Image of Herself</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4230466">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/adele1.jpg?crop=1381px%2C237px%2C1626px%2C1626px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230466/adele-hello-google-translate/?xid=homepage" data-event="left-hand-rail">Google&#8217;s Translation of Adele&#8217;s &#8216;Hello&#8217; Is Gloriously Weird</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4230590">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/taylor-swift-amy-schumer-grammys-thigh-gap-twitter.jpg?crop=456px%2C0px%2C2285px%2C2285px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230590/chow-chow-dog-toby-puff-taylor-swift-dress/?xid=homepage" data-event="left-hand-rail">This Ridiculously Fluffy Dog Dressed Up as Taylor Swift at the Grammys</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4230438">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/kerry-washington-game-of-thrones.jpg?crop=169px%2C8px%2C272px%2C272px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230438/kerry-washington-and-mom-obsessed-game-of-thrones/?xid=homepage" data-event="left-hand-rail">Kerry Washington&#8217;s Mom Is a <em>Game of Thrones</em> Fanatic</a>
-			
-		</h3>
-		
-		<span class="tile-icon time-icons time-icons-video"></span>
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4230439">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/espresso-maker-ashes.jpg?quality=75&amp;strip=color&amp;w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230439/coffee-legends-ashes-kept-in-replica-of-espresso-maker/?xid=homepage" data-event="left-hand-rail">Coffee Legend&#8217;s Ashes Kept in Replica of Espresso Maker</a>
-			
-		</h3>
-		
-		
-	</div>
-	
-</div><div class="rail-article format-video has-icon has-thumbnail " data-article="4230557">
-	<div class="content">
-		<img class="rail-article-photo" src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/tank.png?crop=137px%2C0px%2C1599px%2C1599px&amp;resize=74%2C74&amp;quality=75&amp;strip=color">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230557/us-marines-drift-tanks-snow-video/?xid=homepage" data-event="left-hand-rail">Watch U.S. Marines Drift Tanks in the Snow</a>
-			
-		</h3>
-		
-		<span class="tile-icon time-icons time-icons-video"></span>
-	</div>
-	
-</div><div class="rail-article format-article  has-thumbnail " data-article="4230408">
-	<div class="content">
-		<img class="rail-article-photo" src="https://timedotcom.files.wordpress.com/2016/02/screen-shot-2016-02-19-at-10-16-57-am.png?w=74&amp;h=74&amp;crop=1">
-		<h3 class="rail-article-title">
-			<a class="article-permalink" href="http://time.com/4230408/shia-labeouf-24-hours-elevator/?xid=homepage" data-event="left-hand-rail">Shia LaBeouf Is Spending 24 Hours in an Elevator</a>
+			<a class="article-permalink" href="http://time.com/4232781/gigi-hadid-lip-sync-battle-backstreet-boys-larger-than-life/?xid=homepage" data-event="left-hand-rail">Watch Gigi Hadid Go Old School by Lip-Syncing &#8216;Larger Than Life&#8217; With the Backstreet Boys</a>
 			
 		</h3>
 		
@@ -809,31 +809,31 @@
 	<div class="articles">
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232872/kalamazoo-shooting-uber-driver-charges/?xid=homepage" data-video="&lt;div class=&quot;article-video&quot;&gt;&lt;div class=&quot;video-wrapper brightcove-size-large&quot; data-pos=&quot;1&quot; data-continuous=&quot;1&quot; data-playlist=&quot;0&quot;&gt;&lt;object id=&quot;bc-video-4768393415001-1&quot; class=&quot;BrightcoveExperience&quot;&gt;&lt;param name=&quot;bgcolor&quot; value=&quot;#000000&quot;&gt;&lt;param name=&quot;width&quot; value=&quot;100%&quot;&gt;&lt;param name=&quot;height&quot; value=&quot;100%&quot;&gt;&lt;param name=&quot;playerID&quot; value=&quot;1847503743001&quot;&gt;&lt;param name=&quot;isVid&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;isUI&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;dynamicStreaming&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;videoSmoothing&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;autoStart&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;linkBaseURL&quot; value=&quot;http://ti.me/1SNOpS2&quot;&gt;&lt;param name=&quot;includeAPI&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;templateLoadHandler&quot; value=&quot;Time.application.brightcoveFacade._onTemplateLoad&quot;&gt;&lt;param name=&quot;templateReadyHandler&quot; value=&quot;Time.application.brightcoveFacade._onTemplateReady&quot;&gt;&lt;param name=&quot;wmode&quot; value=&quot;opaque&quot;&gt;&lt;param name=&quot;htmlFallback&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;@videoPlayer&quot; value=&quot;4768393415001&quot;&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;clearvideofloat&quot;&gt;&lt;/div&gt;" data-event="the-brief">
-				<img src="https://timedotcom.files.wordpress.com/2016/02/kalamazoo_shooting_jason_dalt.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=180&amp;crop=1" alt="Jason Dalton is seen on closed circuit television during his arraignment in Kalamazoo County" data-srcset="https://timedotcom.files.wordpress.com/2016/02/kalamazoo_shooting_jason_dalt.jpg?quality=75&amp;strip=color&amp;w=642&amp;h=360&amp;crop=1 600w"/>
+				<a href="http://time.com/4235959/harry-reid-endorses-hillary-clinton/?xid=homepage" data-video="&lt;div class=&quot;article-video&quot;&gt;&lt;div class=&quot;video-wrapper brightcove-size-large&quot; data-pos=&quot;1&quot; data-continuous=&quot;1&quot; data-playlist=&quot;0&quot;&gt;&lt;object id=&quot;bc-video-4772438444001-1&quot; class=&quot;BrightcoveExperience&quot;&gt;&lt;param name=&quot;bgcolor&quot; value=&quot;#000000&quot;&gt;&lt;param name=&quot;width&quot; value=&quot;100%&quot;&gt;&lt;param name=&quot;height&quot; value=&quot;100%&quot;&gt;&lt;param name=&quot;playerID&quot; value=&quot;1847503743001&quot;&gt;&lt;param name=&quot;isVid&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;isUI&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;dynamicStreaming&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;videoSmoothing&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;autoStart&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;linkBaseURL&quot; value=&quot;http://ti.me/1p4SBAu&quot;&gt;&lt;param name=&quot;includeAPI&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;templateLoadHandler&quot; value=&quot;Time.application.brightcoveFacade._onTemplateLoad&quot;&gt;&lt;param name=&quot;templateReadyHandler&quot; value=&quot;Time.application.brightcoveFacade._onTemplateReady&quot;&gt;&lt;param name=&quot;wmode&quot; value=&quot;opaque&quot;&gt;&lt;param name=&quot;htmlFallback&quot; value=&quot;true&quot;&gt;&lt;param name=&quot;@videoPlayer&quot; value=&quot;4772438444001&quot;&gt;&lt;/object&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class=&quot;clearvideofloat&quot;&gt;&lt;/div&gt;" data-event="the-brief">
+				<img src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/gettyimages-501469724.jpg?crop=0px%2C158px%2C2361px%2C1327px&amp;resize=321%2C180&amp;quality=75&amp;strip=color" alt="Senate Lawmakers Address The Media After Their Weekly Policy Luncheons" data-srcset="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/gettyimages-501469724.jpg?crop=0px%2C158px%2C2361px%2C1327px&amp;resize=642%2C360&amp;quality=75&amp;strip=color 600w"/>
 				
 				<span class="time-icons time-icons-next-outline home-brief-video-icon"></span>
 			</a>
 			<figcaption class="image-caption">
-				<span class="credit">Kalamazoo County Court/Reuters</span>
+				<span class="credit">Chip Somodevilla—Getty Images</span>
 			</figcaption>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-video "><a href="http://time.com/4232872/kalamazoo-shooting-uber-driver-charges/?xid=homepage"  data-event="the-brief">Uber Driver Admits to Shootings</a>
+		<h2 class="home-icons-video "><a href="http://time.com/4235959/harry-reid-endorses-hillary-clinton/?xid=homepage"  data-event="the-brief">Reid It and Weep</a>
 		</h2>
 		<p class="home-excerpt">
-			The Uber driver suspected in a series of three random shootings in Michigan admitted carrying out the seemingly random attacks that killed six people. 
+			Senate Minority Leader Harry Reid backed Hillary Clinton's presidential campaign, becoming the 39th and highest-ranking endorsement from a sitting Democratic Senator. The Nevada Senator called for Democrats to consolidate support behind the former Secretary of State
 		</p>
 
 
-		<div class="related-lead-articles ">
-			
+		<div class="related-lead-articles related-split">
+			<div class="related-split-left">
 			
 			<div class="red-bullet">
-				<h3 class="home-icons-brief "><a href="http://time.com/4233148/kalamazoo-uber-driver-rating-shooting-rampage/?xid=homepage"
-																					  data-event="the-brief">Kalamazoo Uber Driver Had a 4.73 Rating Before Shooting Rampage</a>
+				<h3 class="home-icons-video "><a href="http://time.com/4231784/donald-trump-hillary-clinton-general-election/?xid=homepage"
+																					  data-event="the-brief">Donald Trump Predicts He’ll Face Hillary Clinton in the General Election</a>
 				</h3>
 				
 			</div>
@@ -842,8 +842,8 @@
 			
 			
 			<div class="red-bullet">
-				<h3 class="home-icons-video "><a href="http://time.com/4232391/kalamazoo-shooting-uber-passenger/?xid=homepage"
-																					  data-event="the-brief">Kalamazoo Shooting Suspect’s Uber Passenger ‘Went Into Fight Or Flight Mode’</a>
+				<h3 class="home-icons-video "><a href="http://time.com/4231739/hillary-clinton-nevada-caucuses-texas/?xid=homepage"
+																					  data-event="the-brief">Hillary Clinton Celebrates Victory in Nevada With a Call for Unity</a>
 				</h3>
 				
 			</div>
@@ -852,12 +852,42 @@
 			
 			
 			<div class="red-bullet">
-				<h3 class="home-icons-brief "><a href="http://time.com/4232200/kalamazoo-shootings-michigan/?xid=homepage"
-																					  data-event="the-brief">What To Know About the Kalamazoo Shootings</a>
+				<h3 class="home-icons-article "><a href="http://time.com/4231582/nevada-democratic-primary-caucus-results-hillary-clinton-bernie-sanders/?8&amp;xid=homepage"
+																					  data-event="the-brief">Clinton Beats Sanders in Nevada Caucuses</a>
 				</h3>
 				
 			</div>
 			
+			</div>
+			
+			<div class="related-split-right">
+			<div class="red-bullet">
+				<h3 class="home-icons-article "><a href="http://time.com/4231566/hillary-clinton-bernie-sanders-latino-voters-poll/?xid=homepage"
+																					  data-event="the-brief">Clinton's Lead Over Sanders Is Shrinking Rapidly Among Latino Voters, Poll Shows</a>
+				</h3>
+				
+			</div>
+			
+			
+			
+			
+			<div class="red-bullet">
+				<h3 class="home-icons-brief "><a href="http://time.com/4231196/south-carolina-jim-clyburn-hillary-clinton/?xid=homepage"
+																					  data-event="the-brief">South Carolina Rep. Jim Clyburn Endorses Hillary Clinton</a>
+				</h3>
+				
+			</div>
+			
+			
+			
+			
+			<div class="red-bullet">
+				<h3 class="home-icons-video "><a href="http://time.com/4230668/hillary-clinton-morgan-freeman-ad/?xid=homepage"
+																					  data-event="the-brief">Hillary Clinton Enlists Morgan Freeman</a>
+				</h3>
+				
+			</div>
+			</div>
 			
 		</div>
 
@@ -867,19 +897,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232839/syria-civil-war-ceasefire-russia-us-john-kerry/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235230/why-trump-keeps-winning-and-winning/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/kerry_syria1.jpg?crop=35px%2C16px%2C1795px%2C1795px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/kerry_syria1.jpg?crop=35px%2C16px%2C1795px%2C1795px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/kerry_syria1.jpg?crop=35px%2C16px%2C1795px%2C1795px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="JOR: John Kerry Meetings In Amman" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/donald-trump12.jpg?crop=1377px%2C431px%2C311px%2C310px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/donald-trump12.jpg?crop=1377px%2C431px%2C311px%2C310px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/donald-trump12.jpg?crop=1377px%2C431px%2C311px%2C310px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Republican presidential candidate Donald Trump speaks at a caucus night watch party at the Treasure Island Hotel &amp; Casino on February 23, 2016 in Las Vegas, Nevada. The New York businessman won his third state victory in a row in the &quot;first in the West&quot; caucuses." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-article "><a href="http://time.com/4232839/syria-civil-war-ceasefire-russia-us-john-kerry/?xid=homepage"  data-event="the-brief">Kerry Hails Deal with Russia for Syria Ceasefire</a>
+		<h2 class="home-icons-video "><a href="http://time.com/4235230/why-trump-keeps-winning-and-winning/?xid=homepage"  data-event="the-brief">Donald Trump Is 'Winning, Winning, Winning'</a>
 		</h2>
 		<p class="home-excerpt">
-			The United States, Russia, and other countries have reached an agreement for a ceasefire in Syria, Secretary of State John Kerry said. More than 250,000 people have been killed in five years of civil war, and millions have been forced to leave their homes
+			Three's a charm for Donald Trump, who took his third straight contest by double-digit margins in Nevada—"winning, winning, winning the country," as he said. Now the Republican establishment is moving from bargaining to depression
 		</p>
 
 
@@ -890,19 +920,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4233029/cruz-rubio-rick-tyler-fired/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235225/zika-virus-brazil-cdc-microcephaly/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/ted_cruz_1.jpg?crop=1935px%2C284px%2C1326px%2C1326px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/ted_cruz_1.jpg?crop=1935px%2C284px%2C1326px%2C1326px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/ted_cruz_1.jpg?crop=1935px%2C284px%2C1326px%2C1326px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Ted Cruz" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="https://timedotcom.files.wordpress.com/2016/02/zika-brazil-microcephaly-mothers.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/zika-brazil-microcephaly-mothers.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/zika-brazil-microcephaly-mothers.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="A municipal health worker draws blood from three-month-old Shayde Henrique, who was born with microcephaly in Joao Pessoa, Brazil, Feb. 23, 2016." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-video "><a href="http://time.com/4233029/cruz-rubio-rick-tyler-fired/?xid=homepage"  data-event="the-brief">Cruz Fires Top Spokesman for Spreading False Rubio Story</a>
+		<h2 class="home-icons-brief "><a href="http://time.com/4235225/zika-virus-brazil-cdc-microcephaly/?xid=homepage"  data-event="the-brief">Brazil and U.S. &#8216;Disease Detectives&#8217; Begin Zika Study</a>
 		</h2>
 		<p class="home-excerpt">
-			Under criticism for engaging in "dirty tricks," Texas Sen. Ted Cruz asked for the resignation of a senior communications aide after the staffer circulated a false story questioning Florida Sen. Marco Rubio's faith
+			Teams of U.S. and Brazilian health workers ventured into dicey slums, fought through snarled traffic and braved torrential downpours on the first day of their effort to determine if the Zika virus is causing babies to be born with a birth defect affecting the brain
 		</p>
 
 
@@ -913,19 +943,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232356/labrador-retrievers-most-popular-breed/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235302/facebooks-like-button/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/labrador-retrievers-most-popular-purebred-in-america.jpg?crop=1027px%2C819px%2C2653px%2C2653px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/labrador-retrievers-most-popular-purebred-in-america.jpg?crop=1027px%2C819px%2C2653px%2C2653px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/labrador-retrievers-most-popular-purebred-in-america.jpg?crop=1027px%2C819px%2C2653px%2C2653px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="labrador-retrievers-most-popular-purebred-in-america" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/gettyimages-509007658.jpg?crop=1666px%2C1257px%2C1452px%2C1452px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/gettyimages-509007658.jpg?crop=1666px%2C1257px%2C1452px%2C1452px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/gettyimages-509007658.jpg?crop=1666px%2C1257px%2C1452px%2C1452px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Facebook App" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-brief "><a href="http://time.com/4232356/labrador-retrievers-most-popular-breed/?xid=homepage"  data-event="the-brief">The Labrador Retriever Is Still America&#8217;s Top Dog</a>
+		<h2 class="home-icons-video "><a href="http://time.com/4235302/facebooks-like-button/?xid=homepage"  data-event="the-brief">Facebook Rolls Out Radical New 'Like' Buttons </a>
 		</h2>
 		<p class="home-excerpt">
-			The Labrador Retriever remains the most popular purebred dog in the U.S., according to the 2015 ranking by the American Kennel Club. Whether beloved for their sweet disposition, energy or willingness to play fetch, they have won the top spot for 25 years
+			Facebook is finally moving beyond the "Like." The Menlo Park, Calif. firm announced that its long-awaited "Reactions" buttons are arriving for its billion-plus users around the world. New responses include "Love," "Haha," "Wow," "Sad" and "Angry"
 		</p>
 
 
@@ -952,19 +982,20 @@
 	</div>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4229252/google-twitter-presidential-elections-predictions-analysis/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235777/jackson-mississippi-lead-drinking-water/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="https://timedotcom.files.wordpress.com/2016/02/google-president.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/google-president.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/google-president.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="The media filing center for the Republican presidential debate at St. Anselm College includes a large video screen displaying motion graphics about how the candidates are trending on Google February 6, 2016 in Manchester, Iowa." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="https://timedotcom.files.wordpress.com/2016/02/bottled-water.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/bottled-water.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/bottled-water.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="14282504" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-article "><a href="http://time.com/4229252/google-twitter-presidential-elections-predictions-analysis/?xid=homepage"  data-event="the-brief">What Google and Twitter Can Tell Us About 2016</a>
+		<h2 class="home-icons-article "><a href="http://time.com/4235777/jackson-mississippi-lead-drinking-water/?xid=homepage"  data-event="the-brief">Jackson, Miss. Cautions Against Water After Lead Reports</a>
 		</h2>
 		<p class="home-excerpt">
-			If you were trying to figure out who would win the South Carolina primary, you could have read the polls. Or you could have checked Google data. The Internet search giant and social media company Twitter are both pointing the way toward new ways of predicting election results
+			Jackson, Miss. is cautioning some residents against consuming tap water after reports of high lead levels. The city says the water is safe, but pregnant women and small children should take special steps "out of an abundance of caution"
+
 		</p>
 
 
@@ -975,19 +1006,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4230985/zika-virus-cdc-microcephaly/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235871/fifa-reduce-sepp-blatter-ban/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="https://timedotcom.files.wordpress.com/2016/02/mos2.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/mos2.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/mos2.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="471817543" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="https://timedotcom.files.wordpress.com/2016/02/sepp-blatter-fifa-ban-reduce.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/sepp-blatter-fifa-ban-reduce.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/sepp-blatter-fifa-ban-reduce.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="Outgoing FIFA president Sepp Blatter answers to a press conference during the &quot;Sepp Blatter Tournament&quot; on August 22, 2015 in Ulrichen, Blatter's hometown." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-article "><a href="http://time.com/4230985/zika-virus-cdc-microcephaly/?xid=homepage"  data-event="the-brief">CDC Director on Zika: 'So Much That We Need To Do'</a>
+		<h2 class="home-icons-brief "><a href="http://time.com/4235871/fifa-reduce-sepp-blatter-ban/?xid=homepage"  data-event="the-brief">FIFA Reduces Soccer Ban for Sepp Blatter</a>
 		</h2>
 		<p class="home-excerpt">
-			CDC director Tom Frieden talks to TIME about what we're learning in the battle against the Zika virus. The CDC's emergency operations center is on its highest alert for the Zika response—only the fourth time in its history
+			Sepp Blatter and Michel Platini have had their bans from football reduced from eight to six years by the FIFA appeal committee. They were banned after FIFA president Blatter authorized a payment of 2 million Swiss francs to UEFA president Platini in 2011
 		</p>
 
 
@@ -998,19 +1029,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232937/marco-rubio-republican-endorsements-south-carolina/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235427/rick-perry-charges-dropped/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/marco-rubio9.jpg?crop=207px%2C34px%2C241px%2C241px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/marco-rubio9.jpg?crop=207px%2C34px%2C241px%2C241px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/marco-rubio9.jpg?crop=207px%2C34px%2C241px%2C241px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Republican presidential candidate Sen. Marco Rubio (R-FL) (2nd L) campaigns with (L-R) Rep. Trey Gowdy (R-SC), Governor Nikki Haley, and Sen. Tim Scott (R-SC) during an event February 18, 2016, in Greenville, South Carolina." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/rick-perry-felony-charges-dropped-texas-appeals.jpg?crop=759px%2C0px%2C2001px%2C2001px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/rick-perry-felony-charges-dropped-texas-appeals.jpg?crop=759px%2C0px%2C2001px%2C2001px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i1.wp.com/timedotcom.files.wordpress.com/2016/02/rick-perry-felony-charges-dropped-texas-appeals.jpg?crop=759px%2C0px%2C2001px%2C2001px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Former Texas Governor Rick Perry talks about how he supports Republican presidential candidate Sen. Ted Cruz (R-Texas) at the Noah's Event Venue on January 27, 2016 in West Des Moines, Iowa." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-brief "><a href="http://time.com/4232937/marco-rubio-republican-endorsements-south-carolina/?xid=homepage"  data-event="the-brief">Rubio Picks Up Endorsements After Bush Ends Campaign</a>
+		<h2 class="home-icons-brief "><a href="http://time.com/4235427/rick-perry-charges-dropped/?xid=homepage"  data-event="the-brief">Felony Charge Against Rick Perry Is Dropped</a>
 		</h2>
 		<p class="home-excerpt">
-			The end of Jeb Bush's campaign led to a flurry of big-name Republican endorsements. After the former Florida Governor left the GOP primary, a number of big names weighed in, with Bush's former protege, Florida Sen. Marco Rubio, the clear winner
+			Texas' highest criminal court tossed the second and final felony charge against former Gov. Rick Perry, for abuse of power, likely ending a case the Republican says helped sink his short-lived 2016 presidential bid 
 		</p>
 
 
@@ -1021,19 +1052,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232194/apple-tim-cook-email-fbi/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235416/swedish-teen-rescued-isis/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/tim-cook-apple.jpg?crop=1896px%2C23px%2C2733px%2C2733px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/tim-cook-apple.jpg?crop=1896px%2C23px%2C2733px%2C2733px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/tim-cook-apple.jpg?crop=1896px%2C23px%2C2733px%2C2733px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Apple CEO Tim Cook speaks onstage as Robert F. Kennedy Human Rights hosts The 2015 Ripple Of Hope Awards honoring Congressman John Lewis at New York Hilton in New York City on Dec. 8, 2015." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="http://i2.wp.com/timedotcom.files.wordpress.com/2015/11/rtr3wbpt1.jpg?crop=1089px%2C187px%2C1093px%2C1092px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i2.wp.com/timedotcom.files.wordpress.com/2015/11/rtr3wbpt1.jpg?crop=1089px%2C187px%2C1093px%2C1092px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i2.wp.com/timedotcom.files.wordpress.com/2015/11/rtr3wbpt1.jpg?crop=1089px%2C187px%2C1093px%2C1092px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="A member loyal to the ISIL waves an ISIL flag in Raqqa" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-video "><a href="http://time.com/4232194/apple-tim-cook-email-fbi/?xid=homepage"  data-event="the-brief">Apple CEO Defiant Against FBI Order</a>
+		<h2 class="home-icons-brief "><a href="http://time.com/4235416/swedish-teen-rescued-isis/?xid=homepage"  data-event="the-brief">Swedish Teen: Boyfriend Convinced Her to Join ISIS</a>
 		</h2>
 		<p class="home-excerpt">
-			The Apple chief thanked employees for their support in a mass email and said he would stand his ground in the company’s ongoing fight against an order to help the government hack into an iPhone belonging to a San Bernardino shooter
+			Iraqi Kurdish authorities said their troops rescued a Swedish teenager from ISIS near the extremist-controlled city of Mosul, while a local TV station broadcast an interview with the girl in which she described how she came with her boyfriend to Iraq last year
 		</p>
 
 
@@ -1044,19 +1075,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232798/bill-cosby-wife-deposed-defamation/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235546/sony-hackers-lazarus-group/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/camille-bill-cosby-defamation-deposed.jpg?crop=981px%2C70px%2C1251px%2C1251px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/camille-bill-cosby-defamation-deposed.jpg?crop=981px%2C70px%2C1251px%2C1251px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/camille-bill-cosby-defamation-deposed.jpg?crop=981px%2C70px%2C1251px%2C1251px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Dr. Camille Cosby speaks on stage at the 35th Anniversary of the Jackie Robinson Foundation hosted by Bill Cosby at the Waldorf Astoria hotel on March 3, 2008 in New York City." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/hacker-computer-crime.jpg?crop=1852px%2C0px%2C3709px%2C3709px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/hacker-computer-crime.jpg?crop=1852px%2C0px%2C3709px%2C3709px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/hacker-computer-crime.jpg?crop=1852px%2C0px%2C3709px%2C3709px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-brief "><a href="http://time.com/4232798/bill-cosby-wife-deposed-defamation/?xid=homepage"  data-event="the-brief">Bill Cosby's Wife Deposed In Defamation Lawsuit</a>
+		<h2 class="home-icons-brief "><a href="http://time.com/4235546/sony-hackers-lazarus-group/?xid=homepage"  data-event="the-brief">Sony Hackers Are Still at Large, Report Claims </a>
 		</h2>
 		<p class="home-excerpt">
-			Bill Cosby's wife, an enigmatic figure who has publicly stood by her husband despite the dozens of sexual assault allegations against him, was deposed in a defamation lawsuit filed against him by seven accusers
+			The hackers that released troves of private information about Sony Pictures in 2014 are still on the attack, and they were active as recently as last week, according to a new report from a collection of cybersecurity firms
 		</p>
 
 
@@ -1067,19 +1098,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232706/john-kasich-women-left-kitchens/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235214/tornado-storm-watch-florida-georgia/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/john-kasich-new-hampshire.jpg?crop=253px%2C14px%2C284px%2C284px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/john-kasich-new-hampshire.jpg?crop=253px%2C14px%2C284px%2C284px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i2.wp.com/timedotcom.files.wordpress.com/2016/02/john-kasich-new-hampshire.jpg?crop=253px%2C14px%2C284px%2C284px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="Republican presidential candidate Ohio Governor John Kasich speaks at a campaign gathering with supporters upon placing second place in the New Hampshire republican primary on February 9, 2016 in Concord, New Hampshire." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="https://timedotcom.files.wordpress.com/2016/02/louisiana-south-storm-tornado.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/louisiana-south-storm-tornado.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/louisiana-south-storm-tornado.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="First responders search mangled trailers and vehicles after a suspected tornado hit the Sugar Hill RV Park in Convent, La., Feb. 23, 2016." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-video "><a href="http://time.com/4232706/john-kasich-women-left-kitchens/?xid=homepage"  data-event="the-brief">Kasich: Women 'Left Their Kitchens' to Campaign for Him</a>
+		<h2 class="home-icons-video "><a href="http://time.com/4235214/tornado-storm-watch-florida-georgia/?xid=homepage"  data-event="the-brief">3 Dead as Tornadoes Hammer the Deep South</a>
 		</h2>
 		<p class="home-excerpt">
-			A female supporter upbraided Ohio Gov. John Kasich at a rally for saying that women "left their kitchens" to campaign for him. The Republican presidential candidate was telling the crowd about an earlier campaign for the state legislature in 1978
+			More dangerous tornadoes were forecast from Florida up to the Mid-Atlantic Wednesday, part of a storm system that earlier killed at least three people, destroyed homes and left tens of thousands without power
 		</p>
 
 
@@ -1090,19 +1121,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4232879/yelp-employee-fired/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235345/kanye-west-taylor-swift-famous-approval/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/yelp-employee-fired-review-letter-ceo.jpg?crop=2320px%2C270px%2C1680px%2C1679px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/yelp-employee-fired-review-letter-ceo.jpg?crop=2320px%2C270px%2C1680px%2C1679px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/yelp-employee-fired-review-letter-ceo.jpg?crop=2320px%2C270px%2C1680px%2C1679px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="The Yelp Inc. application and logo are displayed on an Apple Inc. iPhone 5s and iPad Air in this arranged photograph in Washington, D.C., U.S., on Friday, April 25, 2014." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="https://timedotcom.files.wordpress.com/2016/02/kanye-west-taylor-swift-famous-lyrics-grammy-awards.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/kanye-west-taylor-swift-famous-lyrics-grammy-awards.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/kanye-west-taylor-swift-famous-lyrics-grammy-awards.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="Kanye West Taylor Swift 'Famous' Lyrics" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-brief "><a href="http://time.com/4232879/yelp-employee-fired/?xid=homepage"  data-event="the-brief">Yelp Employee Fired After Writing Open Letter to CEO</a>
+		<h2 class="home-icons-brief "><a href="http://time.com/4235345/kanye-west-taylor-swift-famous-approval/?xid=homepage"  data-event="the-brief">Kanye Sticks to His Taylor Swift Story</a>
 		</h2>
 		<p class="home-excerpt">
-			A Yelp employee who wrote a blistering post online about her low pay was fired. “Your employee for your food delivery app that you spent $300 million to buy can’t afford to buy food," she wrote
+			Kanye West is sticking to his story about the most controversial line on his new album, <i>The Life of Pablo</i>—never mind denials from Taylor Swift's camp that he ever got her approval for a controversial lyric
 		</p>
 
 
@@ -1113,19 +1144,19 @@
 </article>
 		<article class="home-brief-article border-separated-article home-brief-normal-list has-hero">
 			<figure class="home-brief-hero">
-				<a href="http://time.com/4231348/hpv-vaccine-lowers-infection-rates/?xid=homepage"  data-event="the-brief">
+				<a href="http://time.com/4235301/hungary-referendum-eu-refugee-quota/?xid=homepage"  data-event="the-brief">
 				
-				<img data-src="http://i2.wp.com/timedotcom.files.wordpress.com/2015/01/health-syringe-needle-2.jpg?crop=0px%2C90px%2C1817px%2C1817px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" data-srcset="http://i2.wp.com/timedotcom.files.wordpress.com/2015/01/health-syringe-needle-2.jpg?crop=0px%2C90px%2C1817px%2C1817px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w, http://i2.wp.com/timedotcom.files.wordpress.com/2015/01/health-syringe-needle-2.jpg?crop=0px%2C90px%2C1817px%2C1817px&amp;resize=150%2C150&amp;quality=75&amp;strip=color 800w" alt="TIME.com stock photos Health Syringe Needle" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
+				<img data-src="https://timedotcom.files.wordpress.com/2016/02/hungary-referendum-eu-refugee.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" data-srcset="https://timedotcom.files.wordpress.com/2016/02/hungary-referendum-eu-refugee.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w, https://timedotcom.files.wordpress.com/2016/02/hungary-referendum-eu-refugee.jpg?quality=75&amp;strip=color&amp;w=150&amp;h=150&amp;crop=1 800w" alt="Hungarian Prime Minister Viktor Orban addresses a press conference at the Delegation Hall of the parliament building in Budapest on February 24, 2016." src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" />
 				
 			</a>
 		</figure>
 
 
 	<div class="home-brief-title-and-excerpt">
-		<h2 class="home-icons-article "><a href="http://time.com/4231348/hpv-vaccine-lowers-infection-rates/?xid=homepage"  data-event="the-brief">The HPV Vaccine Is Lowering Infection Rates</a>
+		<h2 class="home-icons-brief "><a href="http://time.com/4235301/hungary-referendum-eu-refugee-quota/?xid=homepage"  data-event="the-brief">Hungary Calls for Vote on E.U.'s Refugee Quotas</a>
 		</h2>
 		<p class="home-excerpt">
-			A new study shows that the HPV vaccine is working in teens and young adults. Rates of HPV infection among teens ages 14 to 19 dropped by 64% six years after the shot was recommended, and by 34% among people ages 20 to 24
+			Viktor Orban, Hungary's prime minister, has called for a national referendum on the European Union's plan for a mandatary quota for the resettlement of migrants and refugees, a vote that affects "Hungary's independence," he said 
 		</p>
 
 
@@ -1142,15 +1173,15 @@
 
 <div class="right-rail right-rail-top">
 	<img src="http://img5.timeinc.net/keynote/above_the_fold_1x1.gif" style="position:absolute; left: 0; top: 0; width: 1px; height: 1px;"><section class="home-freeform home-right-rail-module">
-  <h2 class="home-module-header">Entertainment</h2>
+  <h2 class="home-module-header">A Year in Space</h2>
   <div class="articles">
     <article class="home-freeform-article border-separated-article video has-hero">
       <figure class="home-freeform-hero">
-        <a href="http://time.com/4232332/oscars-2016-fashion-experts-favorite-looks/?xid=homepage">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/gettyimages-476193995.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=214&amp;crop=1" alt="US-OSCARS-ARRIVALS" />
+        <a href="http://time.com/space-nasa-scott-kelly-mission/?xid=homepage">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="http://i1.wp.com/timedotcom.files.wordpress.com/2015/07/150703-0512342.jpg?crop=86px%2C0px%2C1265px%2C844px&amp;resize=321%2C214&amp;quality=75&amp;strip=color" alt="" />
         </a>
       </figure>
-      <h3 class="medium-home-header home-icons-video "><a href="http://time.com/4232332/oscars-2016-fashion-experts-favorite-looks/?xid=homepage">Why These 3 Oscars Dresses Made Fashion History</a></h3>
+      <h3 class="medium-home-header home-icons-video "><a href="http://time.com/space-nasa-scott-kelly-mission/?xid=homepage">See How an Astronaut Stays Close to Family From Space</a></h3>
       
     </article>
   </div>
@@ -1158,8 +1189,72 @@
 	<h2 class="home-module-header">Featured</h2>
 	<div class="articles">
 		<article class="home-columnists-article border-separated-article has-hero">
-			<a href="http://time.com/4232274/apollo-10-music-moon/?xid=homepage" class="home-article-thumbnail" data-event="columnists"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2014/01/jeffrey-kluger.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1" alt="Jeffrey Kluger" data-srcset="https://timedotcom.files.wordpress.com/2014/01/jeffrey-kluger.jpg?quality=75&amp;strip=color&amp;w=100&amp;h=100&amp;crop=1 200w"></a>
+			<a href="http://time.com/4233654/japan-economy-interest-rates/?xid=homepage" class="home-article-thumbnail" data-event="columnists"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="http://i1.wp.com/timedotcom.files.wordpress.com/2014/03/mg_1844_2.jpg?crop=183px%2C91px%2C2574px%2C2575px&amp;resize=100%2C100&amp;quality=75&amp;strip=color" alt="Rana Foroohar" data-srcset="http://i1.wp.com/timedotcom.files.wordpress.com/2014/03/mg_1844_2.jpg?crop=183px%2C91px%2C2574px%2C2575px&amp;resize=100%2C100&amp;quality=75&amp;strip=color 200w"></a>
 			<div class="home-columnists-author-and-title  home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/rana-foroohar/">Rana Foroohar</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4233654/japan-economy-interest-rates/?xid=homepage" data-event="columnists">Japan Is a Disturbing Cautionary Tale for America and the World</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/john-mcwhorter/">John McWhorter</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4234360/obama-culturally-black/?xid=homepage" data-event="columnists">Obama Is Culturally Black Because He Wants to Be</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/stephanie-zacharek/">Stephanie Zacharek</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4217056/oscars-america/?xid=homepage" data-event="columnists">What This Year’s Oscars Say About America</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/josh-levs-2/">Josh Levs</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4235582/full-house-fathers/?xid=homepage" data-event="columnists">Why <i>Full House</i> Matters for Fathers, Then and Now</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/katy-steinmetz/">Katy Steinmetz</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4231379/gender-south-dakota-bathroom-bill/?xid=homepage" data-event="columnists">Gender Is Not Just Chromosomes and Genitals</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/benjamin-h-friedman/">Benjamin H. Friedman</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4234680/closing-guantanamo-bay/?xid=homepage" data-event="columnists">Gitmo Is a Problem for the Next Person in Charge</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/ariel-winter/">Ariel Winter</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://motto.time.com/4225938/ariel-winter-breast-reduction-surgery/?xid=homepage" data-event="columnists">Breast Reduction Surgery Changed My Life</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
+				<h3 class="home-columnists-author"><a href="http://time.com/author/julie-rodgers/">Julie Rodgers</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4233666/wheaton-college-gay-leader/?xid=homepage" data-event="columnists">How a Leading Christian College Turned Against Its Gay Leader</a></h4>
+			</div>
+			
+		</article>
+		<article class="home-columnists-article border-separated-article ">
+			
+			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
 				<h3 class="home-columnists-author"><a href="http://time.com/author/jeffrey-kluger/">Jeffrey Kluger</a></h3>
 				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4232274/apollo-10-music-moon/?xid=homepage" data-event="columnists">No, the Apollo 10 Astronauts Didn&#8217;t Hear &#8216;Alien Music&#8217; Behind the Moon</a></h4>
 			</div>
@@ -1168,72 +1263,8 @@
 		<article class="home-columnists-article border-separated-article ">
 			
 			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/vivek-murthy-and-barbra-streisand/">Vivek Murthy and Barbra Streisand</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4230970/barbra-streisand-vivek-murthy-heart-health/?xid=homepage" data-event="columnists">How We Can Help Save Women's Lives</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/robert-redford/">Robert Redford</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4231875/robert-redford-climate-change/?xid=homepage" data-event="columnists">We Cannot Let SCOTUS Block Clean Power</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/barbara-corcoran/">Barbara Corcoran</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://motto.time.com/4212208/barbara-corcoran-shark-tank-women-office/?xid=homepage" data-event="columnists">Why It’s So Important for Women to Be Likable and Aggressive</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/dan-stewart/">Dan Stewart</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4230780/britain-europe-brexit-david-cameron/?xid=homepage" data-event="columnists">Emotion, Not Facts, Will Decide Whether Britain Stays in the E.U.</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/stephanie-zacharek/">Stephanie Zacharek</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4229847/review-race-jesse-owens-biopic/?xid=homepage" data-event="columnists">Jesse Owens Biopic Race Fails Before the Finish Line</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/adam-segal/">Adam Segal</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4227841/internet-american-power/?xid=homepage" data-event="columnists">The Internet Is Undermining America’s Power</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/jessica-shortall/">Jessica Shortall</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://motto.time.com/4229862/new-mom-back-to-work/?xid=homepage" data-event="columnists">What No One Tells New Moms About Going Back to Work</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/lynn-rhinehart/">Lynn Rhinehart</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4226633/pay-transparency/?xid=homepage" data-event="columnists">Salary Transparency Will Help Women</a></h4>
-			</div>
-			
-		</article>
-		<article class="home-columnists-article border-separated-article ">
-			
-			<div class="home-columnists-author-and-title home-columnists-author-and-title-no-hero home-icons-article ">
-				<h3 class="home-columnists-author"><a href="http://time.com/author/serhiy-lyovochkin/">Serhiy Lyovochkin</a></h3>
-				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4230034/ukraine-future/?xid=homepage" data-event="columnists">This Is the Change Ukraine Really Needs</a></h4>
+				<h3 class="home-columnists-author"><a href="http://time.com/author/kirsten-salyer/">Kirsten Salyer</a></h3>
+				<h4 class="small-home-header"><a class="home-columnists-title" href="http://time.com/4233689/bill-and-melinda-gates-annual-letter-2016/?xid=homepage" data-event="columnists">Melinda Gates Offers a Solution to Time Poverty</a></h4>
 			</div>
 			
 		</article>
@@ -1285,16 +1316,19 @@
 <hr>
 <div class="home-lower">
 	<section class="home-photo-of-the-day home-lower-center home-center">
-  <h2 class="home-module-header">Tech</h2>
+  <h2 class="home-module-header">Sports</h2>
   <article class="home-photo-of-the-day-article">
       <figure class="home-photo-of-the-day-hero">
-        <a href="http://time.com/4230479/nintendo-store-world-new-york/?xid=homepage"  data-event="photo-day" >
-          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/nintendo-store-flagship-nyc801.jpg?quality=75&amp;strip=color&amp;w=616&amp;h=411&amp;crop=1" alt="" />
+        <a href="http://time.com/fencer/?xid=homepage"  data-event="photo-day" >
+          <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/shea-highres-1.jpg?quality=75&amp;strip=color&amp;w=616&amp;h=411&amp;crop=1" alt="" />
         </a>
+        <figcaption class="image-caption">
+          <span class="credit">Daniel Shea for TIME</span>
+        </figcaption>
       </figure>
-    <h3 ><a href="http://time.com/4230479/nintendo-store-world-new-york/?xid=homepage"  data-event="photo-day" >Take a Look at the Totally Redesigned Nintendo Store</a></h3>
+    <h3 ><a href="http://time.com/fencer/?xid=homepage"  data-event="photo-day" >A New Face for Team USA</a></h3>
     <p class="home-excerpt">
-      It opened recently in New York City
+      Fencer Ibtihaj Muhammad brings faith and fearlessness to this summer's Olympic Games
     </p>
     
   </article>
@@ -1306,21 +1340,28 @@
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/21/friends-reunion-nbc-careers-cast/?xid=timehp-popular" data-event="popular" target="_blank">Friends' Reunion: How the TV Show Made Them Stars and Insanely Rich</a>
+					<a href="http://fortune.com/2016/02/22/dear-bernie-sorry-im-the-problem-with-america/?xid=timehp-popular" data-event="popular" target="_blank">Dear Bernie Sanders, Sorry I'm The Problem With America</a>
 				</h3>
 			</div>
 		</article>
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/18/airlines-hate-social-media/?xid=timehp-popular" data-event="popular" target="_blank">These 3 Airlines Are the Most Hated In the World, According to Twitter</a>
+					<a href="http://fortune.com/2016/02/23/republican-caucuses-begin-in-nevada/?xid=timehp-popular" data-event="popular" target="_blank">Republican Caucuses Begin in Nevada</a>
 				</h3>
 			</div>
 		</article>
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/21/chinese-weapons-exports/?xid=timehp-popular" data-event="popular" target="_blank">Chinese Weapons Exports Increase Over the Past Five Years</a>
+					<a href="http://fortune.com/2016/02/23/japans-negative-interest-rate-driving-up-safe-sales/?xid=timehp-popular" data-event="popular" target="_blank">Japan's Negative Interest Rates Are Driving up Sales of Safes</a>
+				</h3>
+			</div>
+		</article>
+		<article class="home-popular-article border-separated-article">
+			<div class="home-popular-title">
+				<h3 class="small-home-header">
+					<a href="http://fortune.com/2016/02/23/starbucks-rewards-program-changes/?xid=timehp-popular" data-event="popular" target="_blank">Customers Are Furious With Starbucks’ New Rewards Program</a>
 				</h3>
 			</div>
 		</article>
@@ -1334,42 +1375,35 @@
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/21/these-10-photos-will-make-you-rethink-your-trip-to-cuba/?xid=timehp-popular" data-event="popular" target="_blank">These 10 Photos Will Make You Rethink Your Trip to Cuba</a>
+					<a href="http://fortune.com/2016/02/23/apple-versus-fbi-other-iphones/?xid=timehp-popular" data-event="popular" target="_blank">Apple Versus FBI Involves at Least 10 Other iPhones</a>
 				</h3>
 			</div>
 		</article>
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2015/08/06/steve-jobs-apple-girlfriend/?xid=timehp-popular" data-event="popular" target="_blank">Steve Jobs' Ex Requested $25M For His "Dishonorable Behavior"</a>
+					<a href="http://fortune.com/2016/02/23/wall-street-bernie-sanders-jpmorgan/?xid=timehp-popular" data-event="popular" target="_blank">Bernie Sanders: Wall Street Strikes Back Against Vermont Senator</a>
 				</h3>
 			</div>
 		</article>
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/19/buzzfeed-metrics/?xid=timehp-popular" data-event="popular" target="_blank">BuzzFeed Is Trying to Find the Metrics That Matter</a>
+					<a href="http://fortune.com/2016/02/23/word-hurting-female-leaders/?xid=timehp-popular" data-event="popular" target="_blank">The Word That's Hurting Female Leaders</a>
 				</h3>
 			</div>
 		</article>
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/19/what-is-a-superdelegate/?xid=timehp-popular" data-event="popular" target="_blank">Democratic Presidential Nomination: What Is a Superdelegate?</a>
+					<a href="http://fortune.com/2016/02/23/entrepreneurs-tips-for-burnout/?xid=timehp-popular" data-event="popular" target="_blank">How to Deal With Burnout</a>
 				</h3>
 			</div>
 		</article>
 		<article class="home-popular-article border-separated-article">
 			<div class="home-popular-title">
 				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/21/yahoo-sale-bidders/?xid=timehp-popular" data-event="popular" target="_blank">Yahoo Could Approach Core Business Bidders as Early as Monday</a>
-				</h3>
-			</div>
-		</article>
-		<article class="home-popular-article border-separated-article">
-			<div class="home-popular-title">
-				<h3 class="small-home-header">
-					<a href="http://fortune.com/2016/02/21/samsung-lg-virtual-reality-camera/?xid=timehp-popular" data-event="popular" target="_blank">Samsung, LG Enter Virtual Reality Camera Fray at MWC</a>
+					<a href="http://fortune.com/2016/02/23/heres-the-other-reason-united-technologies-is-rejecting-honeywells-offer/?xid=timehp-popular" data-event="popular" target="_blank">Here's the Other Reason United Technologies Is Rejecting Honeywell</a>
 				</h3>
 			</div>
 		</article>
@@ -1385,13 +1419,13 @@
             <h2><a href="http://time.com/health/">Health</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4230985/zika-virus-cdc-microcephaly/?xid=homepage" data-event="hp-news" target="">CDC Director on Zika: 'So Much That We Need To Do'</a></h3> 
+                    <h3><a href="http://time.com/4234366/phone-smartphone-addiction/?xid=homepage" data-event="hp-news" target="">You Asked: Am I Addicted to My Phone?</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4231348/hpv-vaccine-lowers-infection-rates/?xid=homepage" data-event="hp-news" target="">The HPV Vaccine Is Lowering Infection Rates</a></h3> 
+                    <h3><a href="http://time.com/4234896/is-more-chemo-better-for-cancer/?xid=homepage" data-event="hp-news" target="">Controlling Cancer May Be Better Than Getting Rid of It Entirely: Study</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4230975/brazil-abortion-laws-zika-outbreak/?xid=homepage" data-event="hp-news" target="">Brazil Weighs Stiffer Abortion Penalties in Zika Crisis</a></h3> 
+                    <h3><a href="http://time.com/4227906/lead-poisoning-global-impact/?xid=homepage" data-event="hp-news" target="">How Lead Is Devastating Generations Around the World</a></h3> 
                 </article>
             </div>
         </div>
@@ -1399,13 +1433,13 @@
             <h2><a href="http://time.com/world/">World</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232768/britain-eu-referendum-brexit-guide/?xid=homepage" data-event="hp-news" target="">Everything to Know About Britain&#8217;s E.U. Referendum</a></h3> 
+                    <h3><a href="http://time.com/4235984/bob-corker-syria-bashar-assad/?xid=homepage" data-event="hp-news" target="">Corker: The U.S. Is 'Empowering Assad' in Syria</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232839/syria-civil-war-ceasefire-russia-us-john-kerry/?xid=homepage" data-event="hp-news" target="">Kerry Hails Deal with Russia for Syria Ceasefire</a></h3> 
+                    <h3><a href="http://time.com/4235852/river-of-trash-beirut-suburbs/?xid=homepage" data-event="hp-news" target="">See the &#8216;River of Trash&#8217; That&#8217;s Taken Over Beirut&#8217;s Suburbs</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232532/china-no-more-bizarre-architecture/?xid=homepage" data-event="hp-news" target="">China's Government Wants to Ban 'Bizarre Architecture'</a></h3> 
+                    <h3><a href="http://time.com/4235630/christ-redeemer-lightning/?xid=homepage" data-event="hp-news" target="">See a Stunning Photo of Lightning Nearly Striking &#8216;Christ the Redeemer&#8217;</a></h3> 
                 </article>
             </div>
         </div>
@@ -1413,13 +1447,13 @@
             <h2><a href="http://fortune.com/">Fortune</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://fortune.com/2016/02/22/google-ads-right-side/?xid=timehp-category" data-event="hp-news" target="_blank">Google Has Quietly Changed How You See Ads On Its Site</a></h3> 
+                    <h3><a href="http://fortune.com/2016/02/24/robotics-market-multi-billion-boom/?xid=timehp-category" data-event="hp-news" target="_blank">The Multi-Billion Dollar Robotics Market Is About to Boom</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://fortune.com/2016/02/22/viacom-sale/?xid=timehp-category" data-event="hp-news" target="_blank">Viacom Needs to Sell Assets and/or Take Itself Private</a></h3> 
+                    <h3><a href="http://fortune.com/2016/02/24/oil-gas-industry-pollution/?xid=timehp-category" data-event="hp-news" target="_blank">The Oil and Gas Industry Pollutes a Lot More Than We Thought</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://fortune.com/2016/02/22/facebook-birthday-video/?xid=timehp-category" data-event="hp-news" target="_blank">Your Birthday Wish to a Facebook Friend Can Now Be a Video</a></h3> 
+                    <h3><a href="http://fortune.com/2016/02/24/bernie-sanders-donald-trump-quotes-quiz/?xid=timehp-category" data-event="hp-news" target="_blank">Can You Tell Donald Trump and Bernie Sanders Apart? Take Our Quiz.</a></h3> 
                 </article>
             </div>
         </div>
@@ -1427,13 +1461,13 @@
             <h2><a href="http://time.com/living/">Living</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232332/oscars-2016-fashion-experts-favorite-looks/?xid=homepage" data-event="hp-news" target="">Why These 3 Oscars Dresses Made Fashion History</a></h3> 
+                    <h3><a href="http://time.com/4232618/new-york-times-square-history/?xid=homepage" data-event="hp-news" target="">The Incredible Secrets of New York&#8217;s Times Square</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4230441/emma-watson-to-take-break-from-acting-to-focus-on-feminism/?xid=homepage" data-event="hp-news" target="">Emma Watson Taking Acting Break to Focus on Feminism</a></h3> 
+                    <h3><a href="http://time.com/4234467/how-to-teach-your-kid-to-watch-video-critically/?xid=homepage" data-event="hp-news" target="">How to Teach Your Kid to Watch Video Critically</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4228579/women-work-pregnancy-workplace-employment-data/?xid=homepage" data-event="hp-news" target="">Employers Use Data to Track Employee Pregnancies</a></h3> 
+                    <h3><a href="http://time.com/4234364/sexual-assault-survivors-justice-bill-of-rights/?xid=homepage" data-event="hp-news" target="">Exclusive: This Video Highlights the Absurd Laws Harming Sexual Assault Survivors</a></h3> 
                 </article>
             </div>
         </div>
@@ -1441,13 +1475,13 @@
             <h2><a href="http://time.com/entertainment/">Entertainment</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4230888/watch-2016-oscar-nominated-movies-online/?xid=homepage" data-event="hp-news" target="">Here’s Where You Can Watch This Year&#8217;s Oscar-Nominated Movies Online</a></h3> 
+                    <h3><a href="http://time.com/4236175/adele-kesha-support-brit-awards/?xid=homepage" data-event="hp-news" target="">Adele Publicly Supports Kesha in Brit Awards Speech</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232985/far-cry-primal/?xid=homepage" data-event="hp-news" target="">If This Is What Being a Caveman Was Like, Sign Me Up</a></h3> 
+                    <h3><a href="http://time.com/4236039/kanye-west-twitter-spree-new-album/?xid=homepage" data-event="hp-news" target="">What We Learned During Kanye West&#8217;s Latest Twitter Spree</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232815/how-an-iconic-oscar-moment-is-made/?xid=homepage" data-event="hp-news" target="">How An Iconic Oscar Moment Is Made</a></h3> 
+                    <h3><a href="http://time.com/4227670/history-oscar-costumes/?xid=homepage" data-event="hp-news" target="">The Real History Behind 2016&#8217;s Oscar-Nominated Costumes</a></h3> 
                 </article>
             </div>
         </div>
@@ -1455,13 +1489,13 @@
             <h2><a href="http://time.com/tech/">Tech</a></h2>
             <div class="articles">
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4229252/google-twitter-presidential-elections-predictions-analysis/?xid=homepage" data-event="hp-news" target="">What Google and Twitter Can Tell Us About 2016</a></h3> 
+                    <h3><a href="http://time.com/4236214/ipod-shuffle-the-mighty/?xid=homepage" data-event="hp-news" target="">The iPod Shuffle’s Back and Nothing Like You Remember</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232985/far-cry-primal/?xid=homepage" data-event="hp-news" target="">If This Is What Being a Caveman Was Like, Sign Me Up</a></h3> 
+                    <h3><a href="http://time.com/4236106/google-docs-voice/?xid=homepage" data-event="hp-news" target="">You Can Now Edit Google Docs With Your Voice</a></h3> 
                 </article>
                 <article class="home-featured-article border-separated-article" data-article="">
-                    <h3><a href="http://time.com/4232456/venmo-paypal-send-money/?xid=homepage" data-event="hp-news" target="">5 Ways To Send Money With Your Smartphone</a></h3> 
+                    <h3><a href="http://time.com/4235930/hoverboards-banned/?xid=homepage" data-event="hp-news" target="">Here Are All the Stores That Have Banned Hoverboards</a></h3> 
                 </article>
             </div>
         </div>
@@ -1508,11 +1542,11 @@
   <div class="articles">
     <article class="home-freeform-article border-separated-article article has-hero">
       <figure class="home-freeform-hero">
-        <a href="http://time.com/fencer/?xid=homepage">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/shea-highres-1.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=214&amp;crop=1" alt="" />
+        <a href="http://itunes.apple.com/us/podcast/its-your-universe-solar-system/id1077050032?mt=2&amp;xid=homepage">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/01/its-your-universe-hero-image.png?w=321&amp;h=214&amp;crop=1" alt="" />
         </a>
       </figure>
-      <h3 class="medium-home-header home-icons-article "><a href="http://time.com/fencer/?xid=homepage">A New Face for Team USA</a></h3>
+      <h3 class="medium-home-header home-icons-article "><a href="http://itunes.apple.com/us/podcast/its-your-universe-solar-system/id1077050032?mt=2&amp;xid=homepage">Check Out TIME&#8217;s New Space Podcast <i>It&#8217;s Your Universe</i></a></h3>
       
     </article>
   </div>
@@ -1521,24 +1555,24 @@
   <div class="articles">
     <article class="home-freeform-article border-separated-article video has-hero">
       <figure class="home-freeform-hero">
-        <a href="http://time.com/4230830/franklin-graham-party-bus-decision-america-election-tour/?xid=homepage">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/franklin-graham-tour.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=214&amp;crop=1" alt="Franklin Graham Tour" />
+        <a href="http://time.com/4235366/marco-rubio-ted-cruz-election-video/?xid=homepage">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/01/republican-presidential-debate-gop-jan-28-photos-13.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=214&amp;crop=1" alt="Republican Presidential candidates Florida Sen. Marco Rubio and Texas Senator Ted Cruz during the Republican presidential debate Thursday, Jan. 28, 2016, in Des Moines, Iowa." />
         </a>
       </figure>
-      <h3 class="medium-home-header home-icons-video "><a href="http://time.com/4230830/franklin-graham-party-bus-decision-america-election-tour/?xid=homepage">Go Inside Franklin Graham's 'Party Bus' in This 360 Video</a></h3>
+      <h3 class="medium-home-header home-icons-video "><a href="http://time.com/4235366/marco-rubio-ted-cruz-election-video/?xid=homepage">What the Rubio-Cruz Fight Means</a></h3>
       
     </article>
   </div>
 </section><section class="home-freeform home-right-rail-module">
   
   <div class="articles">
-    <article class="home-freeform-article border-separated-article video has-hero">
+    <article class="home-freeform-article border-separated-article list has-hero">
       <figure class="home-freeform-hero">
-        <a href="http://time.com/4219910/als-lou-gehrigs-disease/?xid=homepage">
-            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/david-adox-als-love.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=214&amp;crop=1" alt="Danni Michaeli and David Adox in South Orange, NJ in 2015." />
+        <a href="http://time.com/4233141/oscars-2016-predictions/?xid=homepage">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="http://i0.wp.com/timedotcom.files.wordpress.com/2016/02/leonardo-dicaprio-revenant.jpg?crop=209px%2C0px%2C1544px%2C1031px&amp;resize=321%2C214&amp;quality=75&amp;strip=color" alt="" />
         </a>
       </figure>
-      <h3 class="medium-home-header home-icons-video "><a href="http://time.com/4219910/als-lou-gehrigs-disease/?xid=homepage">See How One Couple Is Fighting ALS With Love</a></h3>
+      <h3 class="medium-home-header home-icons-list "><a href="http://time.com/4233141/oscars-2016-predictions/?xid=homepage">Here&#8217;s Who Will Win—and Should Win—at the 2016 Oscars</a></h3>
       
     </article>
   </div>
@@ -1547,11 +1581,11 @@
 
 <div class="divider-articles">
 	<section class="read-more-divider-hero">
-	<img class="article-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/hiroshi-sugimoto-lightning-field-04.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=214&amp;crop=1" alt="" data-srcset="https://timedotcom.files.wordpress.com/2016/02/hiroshi-sugimoto-lightning-field-04.jpg?quality=75&amp;strip=color&amp;w=925&amp;h=617&amp;crop=1 600w" />
-	<a class="related-article" href="http://time.com/4212013/hiroshi-sugimoto/?xid=homepage" data-event="large-image">
+	<img class="article-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAANSURBVBhXYzh8+PB/AAffA0nNPuCLAAAAAElFTkSuQmCC" data-src="https://timedotcom.files.wordpress.com/2016/02/131002129039836325_andrea_rossato_italy_shortlist_professional_candid_2016_08-pr.jpg?quality=75&amp;strip=color&amp;w=321&amp;h=214&amp;crop=1" alt="Kids play over summer holiday at sea. Stopping to look at the different behavior of people on a pier is hilarious and often allows you to freeze the moments in memory." data-srcset="https://timedotcom.files.wordpress.com/2016/02/131002129039836325_andrea_rossato_italy_shortlist_professional_candid_2016_08-pr.jpg?quality=75&amp;strip=color&amp;w=925&amp;h=617&amp;crop=1 600w" />
+	<a class="related-article" href="http://time.com/4233787/sony-world-photography-awards/?xid=homepage" data-event="large-image">
 		<div class="single-related-article-interior">
 			<div class="tags"><h6 class="section-tag">Lightbox</h6></div>
-			<h4 class="article-title">See Hiroshi Sugimoto&#8217;s Masterful Creations</h4>
+			<h4 class="article-title">Shortlist Revealed for the Sony World Photography Awards</h4>
 		</div>
 	</a>
 </section></div>						</div>
@@ -1810,22 +1844,22 @@
 
 		<script>Modernizr.load({ load: '//cdn.tinypass.com/api/tinypass.min.js' });</script><div id="meter-ad-slot" style="display:none;" ></div>	<div style="display:none">
 	</div>
-<script>Time.bootstrap = {"branding":"time","auth_url":"https:\/\/auth.time.com\/","fb_app_id":"53177223193","trending_videos":[{"id":4232985,"title":"If This Is What Being a Caveman Was Like, Sign Me Up","url":"http:\/\/time.com\/4232985\/far-cry-primal\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/far-cry-primal-3.jpg?quality=75&strip=color&w=100&h=100&crop=1","src":{"landscape_large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/far-cry-primal-3.jpg?quality=75&strip=color&w=550&h=367&crop=1","large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/far-cry-primal-3.jpg?quality=75&strip=color&w=405&h=229&crop=1"},"credit":"Ubisoft","caption":"","alt":"","providers":[],"masonry":{"small_width":300,"small_height":169,"large_width":625,"large_height":352}},"index":1},{"id":4232815,"title":"How An Iconic Oscar Moment Is Made","url":"http:\/\/time.com\/4232815\/how-an-iconic-oscar-moment-is-made\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/tout-1920.jpg?quality=75&strip=color&w=100&h=100&crop=1","src":{"landscape_large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/tout-1920.jpg?quality=75&strip=color&w=550&h=367&crop=1","large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/tout-1920.jpg?quality=75&strip=color&w=405&h=229&crop=1"},"credit":"NBC&mdash;NBC via Getty Images","caption":"26TH ANNUAL ACADEMY AWARDS -- New York Ceremony -- Air Date 03\/25\/1954 -- Pictured: Best Actress winner Audrey Hepburn for \"Roman Holiday\" during the 26th Annual Academy Awards on March 25, 1954 held at the NBC Century Theatre in New York City  (Photo by NBC\/NBCU Photo Bank via Getty Images)","alt":"Academy Awards","providers":[],"masonry":{"small_width":300,"small_height":169,"large_width":625,"large_height":352}},"index":2}],"most_popular_stories":[{"id":4232768,"title":"Everything to Know About Britain&#8217;s E.U. Referendum","url":"http:\/\/time.com\/4232768\/britain-eu-referendum-brexit-guide\/?xid=homepage"},{"id":4232903,"title":"Napping Kanye West Is the Internet&#8217;s Latest Meme Victim","url":"http:\/\/time.com\/4232903\/napping-kanye-west-memes\/?xid=homepage"},{"id":4231472,"title":"Bankruptcy Judge Orders 50 Cent to Explain Instagram Posts Showing Stacks of Cash","url":"http:\/\/time.com\/4231472\/bankruptcy-judge-50-cent-instagram-posts-cash\/?xid=homepage"},{"id":4216482,"title":"American Girls","url":"http:\/\/time.com\/americangirls\/"},{"id":4232349,"title":"Kevin Spacey&#8217;s First Instagram Would Make Frank Underwood Proud","url":"http:\/\/time.com\/4232349\/kevin-spacey-joins-instagram-house-of-cards\/?xid=homepage"}],"dynamic_header":true,"dynamic_header_name":"time_motto_header_activate","initial_omniture":{"prop7":"main","pageName":"time|home|main","prop16":"home","channel":"time","prop64":"v2"},"popularVideos":{"time":[4757438489001,4757343306001,4757438484001,4757288313001,4758611197001,4757343298001,4762722302001,4758261519001,4764614178001,4757343301001,4756665112001,4760092573001,4756306427001,4757961920001,4764353669001,4760268425001,4765895779001,4762397954001,4758495569001,4764474018001],"money":[4758495569001,4758535540001,4760733826001,4760342730001,4762938139001,4762779520001,4767556971001,4758215890001]}}</script><script type='text/javascript' src='//tags.tiqcdn.com/utag/timeinc/time.com/prod/utag.js?ver=4.4.1-alpha-36109'></script>
-<script type='text/javascript' src='https://s1.wp.com/wp-content/themes/vip/time2014/js/dist/time-tracking.js?m=1441812711g'></script>
+<script>Time.bootstrap = {"branding":"time","auth_url":"https:\/\/auth.time.com\/","fb_app_id":"53177223193","trending_videos":[{"id":4236175,"title":"Adele Publicly Supports Kesha in Brit Awards Speech","url":"http:\/\/time.com\/4236175\/adele-kesha-support-brit-awards\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/kesha.jpg?quality=75&strip=color&w=100&h=100&crop=1","src":{"landscape_large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/kesha.jpg?quality=75&strip=color&w=550&h=367&crop=1","large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/kesha.jpg?quality=75&strip=color&w=405&h=229&crop=1"},"credit":"Roy Rochlin\u2014Getty Images","caption":"Kesha makes a court appearance in New York City on Feb. 19, 2016.","alt":"Kesha Fans Protest Sony Music Outside New York State Supreme Court","providers":[],"masonry":{"small_width":300,"small_height":200,"large_width":625,"large_height":416}},"index":1},{"id":4236089,"title":"Shocking Drone Video Shows Massive Tornado Damage in Florida","url":"http:\/\/time.com\/4236089\/florida-tornado-drove-video\/","format":"video","icon":"video","trending_video_image":{"class":"article_trending_medium","thumbnail":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/louisiana-south-storm-tornado.jpg?quality=75&strip=color&w=100&h=100&crop=1","src":{"landscape_large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/louisiana-south-storm-tornado.jpg?quality=75&strip=color&w=550&h=367&crop=1","large":"https:\/\/timedotcom.files.wordpress.com\/2016\/02\/louisiana-south-storm-tornado.jpg?quality=75&strip=color&w=405&h=229&crop=1"},"credit":"Max Becherer\u2014AP","caption":"First responders search mangled trailers and vehicles after a suspected tornado hit the Sugar Hill RV Park in Convent, La., Feb. 23, 2016.","alt":"First responders search mangled trailers and vehicles after a suspected tornado hit the Sugar Hill RV Park in Convent, La., Feb. 23, 2016.","providers":[],"masonry":{"small_width":300,"small_height":200,"large_width":625,"large_height":417}},"index":2}],"most_popular_stories":[{"id":4235254,"title":"Watch Kate McKinnon Impersonate Ellen DeGeneres on <i>Ellen<\/i>","url":"http:\/\/time.com\/4235254\/kate-mckinnon-ellen-degeneres\/?xid=homepage"},{"id":3939231,"title":"This Is the Most-Liked Instagram Photo Ever","url":"http:\/\/time.com\/3939231\/kendall-jenner-instagram-photo\/?xid=homepage"},{"id":4233666,"title":"How a Leading Christian College Turned Against Its Gay Leader","url":"http:\/\/time.com\/4233666\/wheaton-college-gay-leader\/?xid=homepage"},{"id":4235147,"title":"Google&#8217;s Newest Robot Looks Ready to Take Over the World","url":"http:\/\/time.com\/4235147\/robot-boston-dynamics-atlas-balance-walk\/?xid=homepage"},{"id":3644023,"title":"Here&#8217;s What Happens When You Boil an iPhone 6 in Coca-Cola","url":"http:\/\/time.com\/3644023\/man-boils-iphone6-in-coca-cola\/?xid=homepage"}],"dynamic_header":true,"dynamic_header_name":"time_motto_header_activate","initial_omniture":{"prop7":"main","pageName":"time|home|main","prop16":"home","channel":"time","prop64":"v2"},"popularVideos":{"time":[4769743348001,4762722302001,4764614178001,4760092573001,4764353669001,4760268425001,4764939512001,4765895779001,4764474018001,4767204809001,4762397954001,4766608037001,4762612243001,4760733826001,4764529258001,4760342730001,4766384111001,4767923519001,4764548549001,4762938139001],"money":[4760733826001,4760342730001,4762938139001,4762779520001,4767556971001,4772048855001,4770484876001,4770350933001]}}</script><script type='text/javascript' src='//tags.tiqcdn.com/utag/timeinc/time.com/prod/utag.js?ver=4.4.1-alpha-36109'></script>
+<script type='text/javascript' src='https://s1.wp.com/wp-content/themes/vip/time2014/js/dist/time-tracking.js?m=1456261763g'></script>
 <script type='text/javascript' src='http://admin.brightcove.com/js/BrightcoveExperiences.js'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var TIME_DFP = {"zone":"homepage","params":{"ptype":"home","ch":"home"}};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyVkF0OgkAMhC8kljWI+mA8ywbK2k33J7Qo3F64gX2dzDczGfjWZihZMSvoGxMKfKiCUsJL6zqIAiOJQi28TcTccBk8i5bZBzxHOcG/AbwEymJBFiUm3SzIIRzGiYIJw1TZK5rmVT8r7V+YisK621/p6bpr7/r7o73FH8NsiqY='></script>
+<script type='text/javascript' src='https://s0.wp.com/_static/??-eJyVkFEOwjAMQy/ECB2jfCHOUo2spErbaMkGuz3bDeiv5Wdbho90Yy2GxcDemFFhJQGjjP3FDZAUXqQGUnmbiLnjOgZWq3OIeE56gn8DeIlUtAVZjJhsa0EO4TBOFJswzMLBsGmehNlo/6KpKH53+zM/3HDzvXd3f00/w1KKoA=='></script>
 <script type='text/javascript' src='//js.revsci.net/gateway/gw.js?csid=H07710'></script>
 <script type='text/javascript'>
 /* <![CDATA[ */
 var wpcomVipAnalytics = {"is_404":"0","is_home":"1","is_single":"0","is_front_page":"1","is_archive":"0","percentToTrack":"1"};
 /* ]]> */
 </script>
-<script type='text/javascript' src='https://s1.wp.com/_static/??-eJyV0EtOAzEMBuALkXGnKgUWiLO4E0/HkZ2EPNqG00NHsEFV1ewsW99v2XCOZgq+kC9QFlLKcOIIhZW2m3EHLoPlXNaGsXMcXH6CHpOFLeUlnLslxoe2CR8SpgYabJWfYSEUrgrFTua3/h+j1USpR/YZtuYa5tZMgx6lFZ7ynb1/UPCrGQlor9h9VkptyMFjGpR9961Cc0nI0g1t86g8LYSWUrdeglLEI3XDmS9070u3leL6mg99H3fP+3H/+rZ5cd+wQefs'></script>
+<script type='text/javascript' src='https://s2.wp.com/_static/??-eJyV0NtOwzAMBuAXIjUto1whnsVr3NWRnYQcGOHpt1Vwg9BE7ixb32/ZcI5mCb6QL1A2UsrwwREKK02P4wFcBsu57A1j1zi4/AA9Jgtbyls4d0uM/9omfEyYGmiwVa7DQihcFYpdzHf9O0ariVJP7DNM5hbm9kyDHqUVXvKdvT9Q8KsZCWhv2L1XSm3IwWMalH33rUJrScjSDW3zqLxshJZSt96CUsQTdcOVP+nel/5Wivtr3vR1PDzP0zy+zE/uArAn5+Y='></script>
 <script type="text/javascript">
 // <![CDATA[
 (function() {
@@ -1850,7 +1884,7 @@ _stq = window._stq || [];
 _tkq.push(['storeContext', {'blog_id':'1359921','blog_tz':'-5','user_lang':'en','blog_lang':'en','user_id':'0'}]);
 _stq.push(['view', {'blog':'1359921','v':'wpcom','tz':'-5','user_id':'0','subd':'timedotcom'}]);
 function st_vt() {var x=document.createElement("img");x.src="http://pixel.wp.com/g.gif?blog=1359921&v=wpcomvt&tz=-5&user_id=0&subd=timedotcom&rand="+Math.random();}
-_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1BNmNJfGhxNCVxUDExYmtXRThKbHcwXTdETWI1alhvb1oseHImN101ZFpEakVpYjlQYVFLYzBaVHRtPz0wXS9bUW8yai5mMmVEMV1fJTZPeis/UERVSU12S3BYcXxUL1RHNyVZeFolflE4aU41Ny9MZ2Y5bkFjMXNBUXRmN21iemZvTzl0TEFXLSxVRmE/flVfUlssNFB1eFE9ei1qLGtBdDFlZmkyJVMrP0NiTXBrTnZ4UlJiLEd6K2UyYnk3JVdOTG0mWVtOK1FYbmd2W0J0NT8tPw=='}]);
+_stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1BNmNJfGhxNCVxUDExYmtXRThKbHcwXTdETWI1alhvb1oseHImN101ZFpEakVpYjlQYVFLYzBaVHRtPz0wXS9bUW8yai5mMmVEMV1fJTZPeis/UERVSU12S3BYcXxUL1RHNyVZeFolfi15d01BS3xtQWp5T1o5a0JsVDNbT24xNjMxcF1ZcitPMXM2aUE3TVczcXEzWUhBQkU3amxUajFxam1oZl9BfnVPdEh4b2NkTm84ZV9oQ2MsVkdpJjZjdFkwP0R6Vld1R1JHSlppVjEuQVk/eSw='}]);
 _stq.push([ 'clickTrackerInit', '1359921', '0' ]);
 	</script>
 <noscript><img src="http://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
@@ -1896,8 +1930,8 @@ if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
 <script>typeof TiiAdTrackRevSci == 'function' && TiiAdTrackRevSci();</script></body>
 </html>
 <!--
-	generated 148 seconds ago
-	generated in 0.893 seconds
-	served from batcache in 0.002 seconds
-	expires in 152 seconds
+	generated 207 seconds ago
+	generated in 0.769 seconds
+	served from batcache in 0.003 seconds
+	expires in 93 seconds
 -->

@@ -6,8 +6,7 @@ import numpy as np
 
 fileDir = os.path.dirname(os.path.realpath('__file__'))
 flist1 = ["scrapy/nytimes/2016-02-29.json","scrapy/timecom/2016-02-29.json","scrapy/nytimes/2016-03-02.json","scrapy/timecom/2016-03-02.json","scrapy/nytimes/2016-03-03.json","scrapy/timecom/2016-03-03.json","scrapy/nytimes/2016-03-04.json","scrapy/timecom/2016-03-04.json","scrapy/nytimes/2016-03-05.json","scrapy/timecom/2016-03-05.json","scrapy/nytimes/2016-03-06.json","scrapy/timecom/2016-03-06.json","scrapy/nytimes/2016-03-07.json","scrapy/timecom/2016-03-07.json","scrapy/nytimes/2016-03-08.json","scrapy/timecom/2016-03-08.json","scrapy/nytimes/2016-03-12.json","scrapy/timecom/2016-03-12.json","scrapy/nytimes/2016-03-13.json","scrapy/timecom/2016-03-13.json"]
-flist = []
-
+flist = ["scrapy/nytimes/2016-03-05.json","scrapy/timecom/2016-03-05.json"]
 for i in range(len(flist1)):
     flist.append(os.path.join(fileDir,flist1[i]))
     
@@ -22,11 +21,11 @@ def dataprep(filex):
             elif x=="sectionnews":
                 for data in y:
                     data = data.lower()
-                    valuelist.append(data.encode('utf-8').strip().replace('/',' ').replace("'",' ').replace(".",' ').replace(",",' ').replace(":"," ").replace("?"," "))
+                    valuelist.append(data.encode('utf-8').strip().replace('/',' ').replace("'",' ').replace(".",' ').replace(",",' ').replace(":"," ").replace("?"," ").replace("("," "))
             else: 
                 for data in y:
                     data = data.lower()
-                    valuelist.append(data.encode('utf-8').strip().replace('/',' ').replace("'",' ').replace(".",' ').replace(",",' ').replace(":"," ").replace("?"," "))
+                    valuelist.append(data.encode('utf-8').strip().replace('/',' ').replace("'",' ').replace(".",' ').replace(",",' ').replace(":"," ").replace("?"," ").replace("("," "))
         dictfile['news']=" ".join(valuelist)    
     return dictfile
 
@@ -137,7 +136,7 @@ def origin_stoplist(wordsterm):
     for [x,y] in wordsterm:
         if x == 1:
             stoplista.append([x,y]) 
-    for x in wordsterm[-50:]:
+    for x in wordsterm[-len(wordsterm)/100:]:
         stoplista.append(x)
     #print ("stoplist",stoplista)
     for [x,y] in stoplista:
@@ -148,19 +147,19 @@ def stoplist(stopwords0):
     excep=["abortion","clinton","trump","court","president","police","donald"]
     for items in stopwords0:
         if items in excep:
-            stopwords0.remove(items)
+            stopwords0 = [item for item in stopwords0 if item != items]
     return stopwords0
 
 def remove_stop_words(data_list,stop_list):
     for word in data_list:
         if word in stop_list:
-            data_list.remove(word)
+            data_list = [x for x in data_list if x != word]
     return data_list
 
 def main():
     stopwordslist = origin_stoplist(termfrequency(allnewswords(flist1)))
     stopwords = stoplist(stopwordslist)
-    arbilist=["isnt","them","turned","say","good","leads","wednesday","leave","says","blue","access","two","takes","point","great","why","draw","other","when","how","made","hes","under","what","very","all","four","causes","but","did","small","told","never","others","along","appears","should","takes","would","only","them","few","tell","today","effort","high","this","can","didnt","give","end","may","earlier","lease","years","still","weeks","then","now","begin","really","large","reason","could","one","their","too"]
+    arbilist=["else","the","stay","details","percent","implement","whos","asked","done","week","p","become","said","your","be","much","will","it","o","have","if","who","u","not","monday","tuesday","wednesday","thursday","saturday","friday","sunday","had","under","isnt","them","turned","say","good","leads","wednesday","leave","says","blue","access","two","takes","point","great","why","draw","other","when","how","made","hes","under","what","very","all","four","causes","but","did","small","told","never","others","along","appears","should","takes","would","only","them","few","tell","today","effort","high","this","can","didnt","give","end","may","earlier","lease","years","still","weeks","then","now","begin","really","large","reason","could","one","their","too"]
     
     for x in arbilist:
         stopwords.append(x)
@@ -187,27 +186,28 @@ def main():
     
     all_common_words = remove_stop_words(list(set.intersection(set(list_of_all_nytimes_words),set(list_of_all_time_words))),stopwords)
     all_words = remove_stop_words(list(set.union(set(list_of_all_nytimes_words),set(list_of_all_time_words))),stopwords)
-    print(len(all_common_words),all_common_words)
+    #print(len(all_common_words),all_common_words)
     print(len(all_common_words)*1.0/len(all_words))
     dict_common_words={}
     dict_all_words={}    
     pdallnewswords = remove_stop_words(allnewswords(flist1),stopwords)    
-    print(len(pdallnewswords))
-    
+   
+            
     for item in pdallnewswords:
         if item in dict_all_words.keys():  
             dict_all_words[item]=dict_all_words[item]+1
         else: dict_all_words[item] = 1
-    
-    print(dict_all_words)
-    print(all_common_words)
+    #print("stopwords",stopwords)
+    #print("all words with frequency:",dict_all_words)
+    #print(all_common_words)
     for key,value in dict_all_words.items():
         if key in all_common_words:
             dict_common_words[key]=value
-    print(dict_common_words)        
-        
-        
+    #print("words in common with frequency:",dict_common_words)        
     
+    #for x in all_words:
+        #if x not in all_common_words:
+            #print (x)
     
 if __name__ == "__main__":
     main()

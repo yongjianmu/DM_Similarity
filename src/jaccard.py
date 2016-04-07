@@ -1,19 +1,33 @@
 import fileinput
 import os
-import json 
+import json
 import numpy as np
 
 
 fileDir = os.path.dirname(os.path.realpath('__file__'))
-flist1 = ["scrapy/nytimes/2016-02-29.json","scrapy/timecom/2016-02-29.json","scrapy/nytimes/2016-03-02.json","scrapy/timecom/2016-03-02.json","scrapy/nytimes/2016-03-03.json","scrapy/timecom/2016-03-03.json","scrapy/nytimes/2016-03-04.json","scrapy/timecom/2016-03-04.json","scrapy/nytimes/2016-03-05.json","scrapy/timecom/2016-03-05.json","scrapy/nytimes/2016-03-06.json","scrapy/timecom/2016-03-06.json","scrapy/nytimes/2016-03-07.json","scrapy/timecom/2016-03-07.json","scrapy/nytimes/2016-03-08.json","scrapy/timecom/2016-03-08.json","scrapy/nytimes/2016-03-12.json","scrapy/timecom/2016-03-12.json","scrapy/nytimes/2016-03-13.json","scrapy/timecom/2016-03-13.json"]
+#flist1 = ["scrapy/nytimes/2016-02-29.json","scrapy/timecom/2016-02-29.json","scrapy/nytimes/2016-03-02.json","scrapy/timecom/2016-03-02.json","scrapy/nytimes/2016-03-03.json","scrapy/timecom/2016-03-03.json","scrapy/nytimes/2016-03-04.json","scrapy/timecom/2016-03-04.json","scrapy/nytimes/2016-03-05.json","scrapy/timecom/2016-03-05.json","scrapy/nytimes/2016-03-06.json","scrapy/timecom/2016-03-06.json","scrapy/nytimes/2016-03-07.json","scrapy/timecom/2016-03-07.json","scrapy/nytimes/2016-03-08.json","scrapy/timecom/2016-03-08.json","scrapy/nytimes/2016-03-12.json","scrapy/timecom/2016-03-12.json","scrapy/nytimes/2016-03-13.json","scrapy/timecom/2016-03-13.json"]
+
+def getFileList(p, q):
+    p = str(p + q)
+    if p == "":
+        return [ ]
+    if p[-1] != "/":
+        p = p + "/"
+    a = os.listdir(p)
+    b = [q + x for x in a if os.path.splitext(p + x)[1] == ".json"]
+    return b
+
+flist1 = getFileList(fileDir + "/", "scrapy/nytimes/")
+flist2 = getFileList(os.getcwd() + "/", "scrapy/timecom/")
+flist1 += flist2
 flist = []
 
 for i in range(len(flist1)):
     flist.append(os.path.join(fileDir,flist1[i]))
-    
+
 def dataprep(filex):
     filename = json.load(open(filex))
-    dictfile={'date':'','news':''} 
+    dictfile={'date':'','news':''}
     for i in range(len(filename)):
         valuelist=[]
         for x,y in filename.iteritems():
@@ -23,14 +37,14 @@ def dataprep(filex):
                 for data in y:
                     data = data.lower()
                     valuelist.append(data.encode('utf-8').strip().replace('/',' ').replace("'",' ').replace(".",' ').replace(",",' ').replace(":"," ").replace("?"," "))
-            else: 
+            else:
                 for data in y:
                     data = data.lower()
                     valuelist.append(data.encode('utf-8').strip().replace('/',' ').replace("'",' ').replace(".",' ').replace(",",' ').replace(":"," ").replace("?"," "))
-        dictfile['news']=" ".join(valuelist)    
+        dictfile['news']=" ".join(valuelist)
     return dictfile
 
-#delete those unmeaningful words which length is < 3 
+#delete those unmeaningful words which length is < 3
 #input: dict["news"]
 #return a list
 def newslist(listx):
@@ -72,7 +86,7 @@ def printnumber(filenamelist):
         fname = os.path.basename(f)
         print('-------{0}-------'.format(fname))
         num_kgram(2,newslist(dataprep(f)["news"]))
-        
+
 
 def k1set(lists):
     lst = []
@@ -136,7 +150,7 @@ def origin_stoplist(wordsterm):
     stoplist=[]
     for [x,y] in wordsterm:
         if x == 1:
-            stoplista.append([x,y]) 
+            stoplista.append([x,y])
     for x in wordsterm[-50:]:
         stoplista.append(x)
     #print ("stoplist",stoplista)
@@ -161,10 +175,10 @@ def main():
     stopwordslist = origin_stoplist(termfrequency(allnewswords(flist1)))
     stopwords = stoplist(stopwordslist)
     arbilist=["isnt","them","turned","say","good","leads","wednesday","leave","says","blue","access","two","takes","point","great","why","draw","other","when","how","made","hes","under","what","very","all","four","causes","but","did","small","told","never","others","along","appears","should","takes","would","only","them","few","tell","today","effort","high","this","can","didnt","give","end","may","earlier","lease","years","still","weeks","then","now","begin","really","large","reason","could","one","their","too"]
-    
+
     for x in arbilist:
         stopwords.append(x)
-        
+
     list_of_all_nytimes_sets=[]
     list_of_all_time_sets=[]
     for x in range(len(flist)/2):
@@ -178,37 +192,36 @@ def main():
         #print(set.intersection(k2set(kgram(2,characters(newslist(dataprep(flist[x])["news"])))),k2set(kgram(2,characters(newslist(dataprep(flist[x+1])["news"]))))))
         #print("jaccard similarity",jaccard(k2set(kgram(2,characters(newslist(dataprep(flist[x])["news"])))),k2set(kgram(2,characters(newslist(dataprep(flist[x+1])["news"]))))))
 
-    list_of_all_nytimes_words=allwords(list_of_all_nytimes_sets)  
-    list_of_all_time_words=allwords(list_of_all_time_sets)         
+    list_of_all_nytimes_words=allwords(list_of_all_nytimes_sets)
+    list_of_all_time_words=allwords(list_of_all_time_sets)
     #print(len(list_of_all_time_words))
-    #print(list_of_all_time_words)              
+    #print(list_of_all_time_words)
     #print(len(list_of_all_nytimes_words))
-    #print(list_of_all_nytimes_words)    
-    
+    #print(list_of_all_nytimes_words)
+
     all_common_words = remove_stop_words(list(set.intersection(set(list_of_all_nytimes_words),set(list_of_all_time_words))),stopwords)
     all_words = remove_stop_words(list(set.union(set(list_of_all_nytimes_words),set(list_of_all_time_words))),stopwords)
     print(len(all_common_words),all_common_words)
     print(len(all_common_words)*1.0/len(all_words))
     dict_common_words={}
-    dict_all_words={}    
-    pdallnewswords = remove_stop_words(allnewswords(flist1),stopwords)    
+    dict_all_words={}
+    pdallnewswords = remove_stop_words(allnewswords(flist1),stopwords)
     print(len(pdallnewswords))
-    
+
     for item in pdallnewswords:
-        if item in dict_all_words.keys():  
+        if item in dict_all_words.keys():
             dict_all_words[item]=dict_all_words[item]+1
         else: dict_all_words[item] = 1
-    
+
     print(dict_all_words)
     print(all_common_words)
     for key,value in dict_all_words.items():
         if key in all_common_words:
             dict_common_words[key]=value
-    print(dict_common_words)        
-        
-        
-    
-    
+    print(dict_common_words)
+
+
+
+
 if __name__ == "__main__":
     main()
-

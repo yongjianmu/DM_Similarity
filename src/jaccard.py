@@ -182,8 +182,8 @@ def main():
     list_of_all_nytimes_sets=[]
     list_of_all_time_sets=[]
     for x in range(len(flist)/2):
-        x=2*x
-        list_of_all_time_sets.append(k1set(newslist(dataprep(flist[x+1])["news"])))
+        #x=2*x
+        list_of_all_time_sets.append(k1set(newslist(dataprep(flist[x + (len(flist)/2)])["news"])))
         list_of_all_nytimes_sets.append(k1set(newslist(dataprep(flist[x])["news"])))
         #print("----{}-and-{}----same words  k=1-------------------".format(flist1[x],flist1[x+1]))
         #print(set.intersection(k1set(newslist(dataprep(flist[x])["news"])),k1set(newslist(dataprep(flist[x+1])["news"]))))

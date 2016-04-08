@@ -11,24 +11,18 @@ class tcSpider(scrapy.Spider):
 
     def parse(self,response):
         l = ItemLoader(item = timeItem(),response = response)
-        l.add_xpath('date', '//*[@id="rail-articles"]/nav/section/div[1]/div/h3/time/text()')
-        #l.add_xpath('topnews','//p[@class="home-excerpt"]/text()')
         l.add_xpath('topnews','//*[@id="article-container"]/div/div[1]/section/div/article[*]/div/p/text()')
         l.add_xpath('topnews','//*[@id="article-container"]/div/div[1]/section/div/article[*]/div/h2/a/text()')
         l.add_xpath('topnews','//*[@id="article-container"]/div/div[1]/section/div/article[1]/div/div/div[2]/div[*]/h3/a/text()')
         l.add_xpath('sectionnews','//a[contains(@class,"home-columnists-title")]/text()')
-        #print(type(l.load_item()))
         x = l.load_item()
-        #print(len(x['date']),len(x['topnews']),len(x['sectionnews']))
-        print("------------")
-        print(x['date'])
-        print("------------")
+
         nytdict = dict()
         datelist = []
+        datalist = datetime.date.today()
         topnewslist = []
         sectionnewslist = []
-        for t in x['date']:
-            nytdict['date'] = str(t)
+        nytdict['date'] = str(datalist)
 
         for t in x['topnews']:
             topnewslist.append(str(t.encode('ascii','ignore')).strip())

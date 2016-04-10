@@ -158,6 +158,7 @@ def remove_stop_words(data_list,stop_list):
     return data_list
 
 def main():
+    
     stopwordslist = origin_stoplist(termfrequency(allnewswords(flist1)))
     stopwords = stoplist(stopwordslist)
     arbilist=["isnt","them","turned","say","good","leads","wednesday","leave","says","blue","access","two","takes","point","great","why","draw","other","when","how","made","hes","under","what","very","all","four","causes","but","did","small","told","never","others","along","appears","should","takes","would","only","them","few","tell","today","effort","high","this","can","didnt","give","end","may","earlier","lease","years","still","weeks","then","now","begin","really","large","reason","could","one","their","too"]
@@ -167,6 +168,7 @@ def main():
         
     list_of_all_nytimes_sets=[]
     list_of_all_time_sets=[]
+    
     for x in range(len(flist)/2):
         x=2*x
         list_of_all_time_sets.append(k1set(newslist(dataprep(flist[x+1])["news"])))

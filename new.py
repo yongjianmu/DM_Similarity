@@ -18,7 +18,8 @@ flist = flist1+flist2+flist3
 
 #stop_words
 stop_words = stopwords.words('english')
-
+arbi_stop_words=["says","may","go"]
+stop_words = arbi_stop_words + stop_words
 #perpare data
 #input: one file name
 #return: list of string formate titles
@@ -141,40 +142,67 @@ def intersection_ratio(file1,file2):
             for word in value1:
                 if word in value2:
                     k = k + 1
+                    #if k > 1:
+                        #print(key1,key2,word)
             if k > 1: 
-                #print((key1,value1),(key2,value2))
                 similar_title.append([key1,key2])   
     
-    #detailed similar title content
-    '''
+    #print(similar_title)
     o1 = dataprep(file1)
     o2 = dataprep(file2)
-    print("---------similar news----------")
-    for i in range(len(similar_title)):
-        x = similar_title[i][0]
-        y = similar_title[i][1]  
-        print("-------------")
-        print(x,o1[x])
-        print(y,o2[y])
-    '''
+
     l1 = [] 
     for [i,j] in similar_title:
         l1.append(i)
-#    print(set(l1))
+    s1 = set(l1)
+    #print(s1)
+    
+    #detailed similar title content    
+    #for item in s1: 
+        #print("------------------------------------------------------------")            
+        #print("file1")
+        #print(item)
+        #print(o1[item])
+        #print("---------------------------")
+        #print("file2")          
+        #for i in range(len(similar_title)):                      
+            #if similar_title[i][0] == item:
+                #y = similar_title[i][1] 
+                #print(y)
+                #print(o2[y])    
+            
     similar_title_count = len(set(l1))
     total_count = len(f1)
-    print(similar_title_count * total_count**(-1))    
-
+    ratios = similar_title_count * total_count**(-1) * 100
+    ratio = str(ratios)+"%"
+    #print(similar_title_count,total_count)
+    print(ratio)    
+    return ratios
     
 def main():
 
-    nyt_words = flist1[2]
-    time_words = flist2[2]
-    google_words = flist3[2]
+    #nyt_words = flist1[2]
+    #time_words = flist2[2]
+    #google_words = flist3[2]
+    #print(len(dataprep(nyt_words)),len(dataprep(time_words)),len(dataprep(google_words)))
+    #intersection_ratio(nyt_words,google_words)
+    #intersection_ratio(time_words, google_words)
+    #intersection_ratio(nyt_words, time_words)
+    for i in range(len(flist1)):
+        print("2016-04-0{}".format(8+i)) 
+        print("New york times & google")
+        intersection_ratio(flist1[i],flist3[1])
+        print("Time & google")
+        intersection_ratio(flist2[i],flist3[1])
+        print("New york times & Time")
+        intersection_ratio(flist1[i],flist2[1])        
+        
+        
     
-    intersection_ratio(nyt_words,google_words)
-    intersection_ratio(time_words, google_words)
-    intersection_ratio(nyt_words, time_words)
+    
+    
+    
+    
     
     
     

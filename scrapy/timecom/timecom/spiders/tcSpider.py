@@ -8,13 +8,13 @@ class tcSpider(scrapy.Spider):
     name = 'tc'
     start_urls = ['http://www.time.com']
     filename = datetime.date.today()
-
     def parse(self,response):
         l = ItemLoader(item = timeItem(),response = response)
-        l.add_xpath('topnews','//*[@id="article-container"]/div/div[1]/section/div/article[*]/div/p/text()')
+        #l.add_xpath('topnews','//*[@id="article-container"]/div/div[1]/section/div/article[*]/div/p/text()')
         l.add_xpath('topnews','//*[@id="article-container"]/div/div[1]/section/div/article[*]/div/h2/a/text()')
         l.add_xpath('topnews','//*[@id="article-container"]/div/div[1]/section/div/article[1]/div/div/div[2]/div[*]/h3/a/text()')
         l.add_xpath('sectionnews','//a[contains(@class,"home-columnists-title")]/text()')
+        l.add_xpath('sectionnews','//a[contains(@data-event,"hp-news")]/text()')
         x = l.load_item()
 
         nytdict = dict()
